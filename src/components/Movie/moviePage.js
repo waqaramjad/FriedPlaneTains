@@ -292,6 +292,7 @@ const MoviesPage = () => {
        
 
       </div>
+
     </div>
 
     );

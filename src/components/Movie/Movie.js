@@ -32,6 +32,16 @@ class MoviePage extends Component {
           </div>
         </div>
         <div className="row">
+
+        <div className="col-md-4 offset-md-1 card">
+            <img
+              className="moviePosterImg image"
+              src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/other/ant_man_ver5.jpg"
+              alt="Card image cap"
+            />
+        </div>
+
+
           <div className="col-md-7 offset-md-1">
 
             <div className="card card-inverse card-primary " style={{marginTop:'15px'}}>
