@@ -1,0 +1,162 @@
+.HomeUserBackDrop {
+  background-image: url("https://ak1.picdn.net/shutterstock/videos/1831691/thumb/1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.iconColorOutline {
+  color: #FF8D1B;
+  background-color: #29302d;
+  border: 1px solid #FF8D1B;
+}
+
+/* slider css */
+/* .slide-container {
+  width: 100%;
+  margin: auto;
+  
+ }
+
+h3 {
+  text-align: center; }
+
+.each-slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 300px;
+  /* this ^ controls the height */
+/* } */
+/* 
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+.each-fade {
+  display: flex;
+}
+
+.each-fade .image-container {
+  width: 85%;
+  overflow: hidden;
+}
+
+.each-fade .image-container img {
+  width: 100%;
+  height: 300px;
+}
+
+.each-fade h2 {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: #29302d;
+}
+.description{
+  width: 35%;
+ 
+  padding: 10px;
+  margin: 0;
+  background: #101613;
+  color:#FF8D1B;
+} */
+
+.description {
+  padding: 20px;
+  margin: 0px;
+  background: #101613;
+  color: rgb(248, 248, 248);
+}
+.imgprop {
+  height: 400px;
+  /* width:1000px; */
+  margin: 0px;
+}
+@media (max-width: 750px) {
+  .imgprop {
+    height: 250px;
+    margin: 0px;
+  }
+  .description {
+    padding: 15px;
+    text-align: center;
+  }
+}
+.checked {
+  color: orange;
+}
+.moviePosterImg {
+  min-height: 230px;
+  max-height: 250px;
+  height: 100%;
+  width: 100%;
+}
+.CardWidthSmallDevices {
+  width: 12rem;
+}
+/* this controls the overrall main big slider most popular moves  */
+.MainSliderHeight{
+  height: 350px;
+}
+/* this controls the img size of the img inside big slider  */
+.MainSliderImgSize{
+  
+  height: 350px;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+@media (max-width: 750px) {
+  .CardWidthSmallDevices {
+    width: 9rem;
+  }
+  .MainSliderHeight{
+    height: 100%;
+  }.MainSliderImgSize{
+    height: 100%;
+  
+  }
+  .videoWrapper iframe {
+  height: 100%;
+  }
+}
+
+.MainSliderStyle{
+  background-color: #29302d;
+  color:#FF8D1B;
+
+}
+.videoWrapper {
+	position: relative;
+	padding-bottom: 36.25%; /* 16:9 */
+	padding-top: 25px;
+  height: 0;
+  border:2px solid black;
+}
+
+.jumbotron {
+  background: #358CCE;
+  color: #FFF;
+  border-radius: 0px;
+  }
+  .jumbotron-sm { padding-top: 24px;
+  padding-bottom: 24px; }
+  .jumbotron small {
+  color: #FFF;
+  }
+  .h1 small {
+  font-size: 24px;
+  }
