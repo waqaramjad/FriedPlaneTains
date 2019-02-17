@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import "./style.css";
+import "../style.css";
 import { connect } from "react-redux";
 // import {signinAction}  from "../store/actions/action"promo_chat
-import Banana from "../media/promo_banan.png";
-import Discuss from "../media/promo_chat.png";
-import Social from "../media/promo_social.png";
+import Banana from "../../media/promo_banan.png";
+import Discuss from "../../media/promo_chat.png";
+import Social from "../../media/promo_social.png";
 import {
   changeName,
   GoogleSignin,
   facebookSignin
-} from "../store/actions/action";
+} from "../../store/actions/action";
 const Contact = () => {
   return (
     <div>

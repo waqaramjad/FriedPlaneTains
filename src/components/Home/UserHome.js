@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 // import {signinAction}  from "../store/actions/action"promo_chat
-import PlaceholderICON from "../media/29.png";
-import "./style.css";
+// import PlaceholderICON from "../../media/29.png";
+import PlaceholderICON from "../../media/29.png";
+import "../style.css";
 import {
   changeName,
   GoogleSignin,
   facebookSignin
-} from "../store/actions/action";
+} from "../../store/actions/action";
 const UserHome = props => {
   return (
     <div className="container-fluid text-center">

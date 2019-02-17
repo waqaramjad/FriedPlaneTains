@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { Route, Router } from "react-router-dom";
-import Home from "./components/home";
+import Home from "./components/Home/home";
 // import About from './components/about';
-import UserHome from "./components/UserHome";
-import Signin from "./components/Sign-in";
-import AboutUs from "./components/AboutUs";
+import UserHome from "./components/Home/UserHome";
+import Signin from "./components/Auth/Sign-in";
+import AboutUs from "./components/About/AboutUs";
 import Header from './Layout/Header';
 import HeaderOne from './Layout/HeaderFirst';
-import Movie from './components/Movie';
-import MoviesPage from './components/moviePage';
+import Movie from './components/Movie/Movie';
+import MoviesPage from './components/Movie/moviePage';
 import Footer from './Layout/Footer';
-import Contact from './components/Contact.js';
-import News from "./components/News";
-import FullNews from './components/FullNews';
+import Contact from './components/Contact/Contact';
+import News from "./components/News/News";
+import FullNews from './components/News/FullNews';
 // import Chat from './components/chat';
 
 import history from "./History";

@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import MoviesList from "./MovieList";
-import Gallery from "./AliceSlider";
-import MovieNews from './NewsItem';
+import MoviesList from "../Movie/MovieList";
+import Gallery from "../Sliders/AliceSlider";
+import MovieNews from '../News/NewsItem';
 import {
   changeName,
   GoogleSignin,
   facebookSignin , MOVIESData, GetAllNews
-} from "../store/actions/action";
-import Carousal from "./carousal";
+} from "../../store/actions/action";
+import Carousal from "../Sliders/carousal";
 class Home extends Component {
 
   constructor(props) {

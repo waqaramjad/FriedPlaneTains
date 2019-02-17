@@ -5,7 +5,8 @@ import {
   changeName,
   GoogleSignin,
   facebookSignin
-} from "../store/actions/action";
+
+} from "../../store/actions/action";
 
 var Movies ; 
 

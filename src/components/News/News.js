@@ -7,8 +7,8 @@ import {
   GoogleSignin,
   facebookSignin,
   GetAllNews
-} from "../store/actions/action";
-import Carousal from "./carousal";
+} from "../../store/actions/action";
+import Carousal from "../Sliders/carousal";
 class Home extends Component {
   constructor(props) {
     super(props);

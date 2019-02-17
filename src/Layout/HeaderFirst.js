@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import { connect } from "react-redux";
-import Model from "./../components/Model";
+import Model from "./../components/Sliders/Model";
 // import Logo from './../socialfinderapp.png'
 import { Link } from "react-router-dom";
 import {
