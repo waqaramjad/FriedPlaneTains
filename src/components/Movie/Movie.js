@@ -22,18 +22,19 @@ class MoviePage extends Component {
   render() {
     console.log(this.props)
       let MovieNames=this.props.match.params.moviename;
-      let TrailerSource="https://www.youtube.com/embed/"+Movies[MovieNames].TrailerUrl;
+      // let TrailerSource="https://www.youtube.com/embed/"+Movies[MovieNames].TrailerUrl;
+      let TrailerSource="https://www.youtube.com/embed/mP0VHJYFOAU"
     return (
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-11 offset-md-1" style={{ marginTop: "15px" }}>
-            <h3>{Movies[MovieNames].Title}</h3>
-            {console.log(Movies[MovieNames].discription)}
+            <h3>Ant Man</h3>
+            {/* {console.log(Movies[MovieNames].discription)} */}
           </div>
         </div>
         <div className="row">
 
-        <div className="col-md-4 offset-md-1 card">
+        <div className="col-md-4 card">
             <img
               className="moviePosterImg image"
               src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/other/ant_man_ver5.jpg"
@@ -42,7 +43,7 @@ class MoviePage extends Component {
         </div>
 
 
-          <div className="col-md-7 offset-md-1">
+          <div className="col-md-7 ">
 
             <div className="card card-inverse card-primary " style={{marginTop:'15px'}}>
             <div className="videoWrapper" style={{margin:'5%'}}>
@@ -58,7 +59,7 @@ class MoviePage extends Component {
             </div>
             <div style={{
  marginLeft:'3%' , marginRight: '3%'}}>
-                <h6>{Movies[MovieNames].discription}</h6>
+                <h6>ohemian Rhapsody is a foot-stomping celebration of Queen, their music and their extraordinary lead singer Freddie Mercury. Freddie defied stereotypes and shattered convention to become one of the most beloved entertainers on the planet. The film traces the meteoric rise of the band through their iconic songs and revolutionary sound. They reach unparalleled success, but in an unexpected turn Freddie, surrounded by darker influences, shuns Queen in pursuit of his solo career. Having suffered greatly without the collaboration of Queen, Freddie manages to reunite with his bandmates just in time for Live Aid. While bravely facing a recent AIDS diagnosis, Freddie leads the band in one of the greatest performances in the history of rock music. Queen cements a legacy that continues to inspire outsiders, dreamers and music lovers to this day</h6>
             </div>
               <div className="card-block" style={{padding:'20px'}}>
                 <h5 className="card-title "> Comments </h5>
