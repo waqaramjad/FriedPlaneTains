@@ -13,6 +13,8 @@ import Footer from './Layout/Footer';
 import Contact from './components/Contact/Contact';
 import News from "./components/News/News";
 import FullNews from './components/News/FullNews';
+import ActorPage from './components/Actor/ActorPage';
+import Actor from './components/Actor/Actor';
 // import Chat from './components/chat';
 
 import history from "./History";
@@ -35,8 +37,10 @@ class Routers extends Component {
             <Route exact path="/about" component={AboutUs} />
             <Route exact path="/Contact" component={Contact} />
             <Route exact path="/detail/:moviename" component={Movie}/>
+            {/* <Route exact path="/detail/:moviename" component={Actor}/> */}
             <Route exact path="/news" component={News} />
             <Route exact path="/Movies" component={MoviesPage} />
+            <Route exact path="/Actors" component={ActorPage} />
             <Route exact path="/fullnews/:newstitle" component={FullNews}/>
             <div className="fl-page-footer-wrap">
               <Footer />
