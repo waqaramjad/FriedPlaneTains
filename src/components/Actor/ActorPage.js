@@ -1,8 +1,26 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import './movieStyle.css'
-const ActorPage = () => {
-  return (
+import {
+  AcrtorsData
+
+} from "../../store/actions/action";
+class ActorPage extends Component {
+
+  constructor(props) {
+
+    super(props);
+    // this.props.AcrtorsData()
+    console.log(this.props.AcrtorsData())
+console.log(this.props.Actors)
+  }
+   componentDidMount() {
+    // this.props.GetAllNewsFromFirebase();
+  }
+  render() {
+    return (
+
 <div class="container">
       <div className="row">
         <div className="col-lg-3 col-md-3 col-6 ">
@@ -296,5 +314,25 @@ const ActorPage = () => {
     </div>
 
     );
-};
-export default ActorPage;
+}
+}
+
+function mapStateToProp(state) {
+  return {
+    Actors: state.reducer.Actors,
+    // CurrentUser: state.reducer.currentUser,AllNews: state.reducer.News
+  };
+}
+function mapDispatchToProp(dispatch) {
+  return {
+    
+    AcrtorsData: () => {
+      dispatch(AcrtorsData());
+    }
+  };
+}
+
+export default connect(
+  mapStateToProp,
+  mapDispatchToProp
+)(ActorPage);

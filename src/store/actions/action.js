@@ -67,6 +67,26 @@ export function MOVIESData(daa) {
           })
   }
 }
+export function AcrtorsData() {
+  return dispatch => {
+      console.log('AcrtorsData')
+
+      firebase.database().ref('Actors/').once('value')
+      .then((data) => {
+
+              console.log('Actors')
+              console.log(data.val())
+              let Actors = data.val();
+
+              dispatch({ type: 'ACTORS', payload: Actors })
+
+
+
+
+
+          })
+  }
+}
 
 // export function SignUpFirebase(load) {
 //     // firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {

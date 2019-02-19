@@ -4,7 +4,8 @@
     ALLUSERS:'ALLUSERS',
     MESSAGES: 'MESSAGES',
     CHANGERECPUID: 'CHANGERECPUID' , 
-    MOVIES: 'MOVIES'
+    MOVIES: 'MOVIES', 
+    ACTORS : ACTORS
 }
 
 export default ActionTypes;

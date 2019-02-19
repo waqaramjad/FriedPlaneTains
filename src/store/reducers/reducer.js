@@ -19,6 +19,8 @@ const reducer = (state = initial, action) => {
       return { ...state, AllMessages: action.payload };
     case "MOVIES":
       return { ...state, MOVIES: action.payload };
+    case "ACTORS":
+      return { ...state, ACTORS: action.payload };
   
     case "GET_NEWS":
       return { ...state, News: action.payload };
