@@ -22,7 +22,7 @@ class Actor extends Component {
   render() {
     console.log(this.props)
       let ActorName=this.props.match.params.ActorName;
-      console.log('MovieNames' , MovieNames)
+      console.log('MovieNames' , ActorName)
       // let TrailerSource="https://www.youtube.com/embed/"+Movies[MovieNames].TrailerUrl;
       let TrailerSource="https://www.youtube.com/embed/mP0VHJYFOAU"
     return (
@@ -35,7 +35,7 @@ class Actor extends Component {
         <div className="col-md-4 ">
             <img
               className="SideimageLeft  "
-              src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/other/ant_man_ver5.jpg"
+              src={ACTORS[ActorName].imageURL}
               alt="Card image cap"
             />
         </div>
@@ -43,12 +43,12 @@ class Actor extends Component {
 
           <div className="col-md-7 ">
           {/* <div class='row'> */}
-          <h3 class='topText'>Ant Man</h3><br/>
-          <button className='AddWatchBtn' >Add to watch List </button>
+          <h3 class='topText'>{ACTORS[ActorName].name}</h3><br/>
+          {/* <button className='AddWatchBtn' >Add to watch List </button> */}
             
           {/* </div> */}
             <div className="card card-inverse card-primary VideoSection" style={{marginTop:'15px'}}>
-            <div className="videoWrapper" style={{margin:'5%'}}>
+            {/* <div className="videoWrapper" style={{margin:'5%'}}>
               <iframe
                 width="560"
                 height="315"
@@ -58,12 +58,17 @@ class Actor extends Component {
                 allowFullScreen 
                 
                 />
-            </div>
+            </div> */}
             <div style={{
  marginLeft:'3%' , marginRight: '3%'}}>
-                <h6 class='discription'>ohemian Rhapsody is a foot-stomping celebration of Queen, their music and their extraordinary lead singer Freddie Mercury. Freddie defied stereotypes and shattered convention to become one of the most beloved entertainers on the planet. The film traces the meteoric rise of the band through their iconic songs and revolutionary sound. They reach unparalleled success, but in an unexpected turn Freddie, surrounded by darker influences, shuns Queen in pursuit of his solo career. Having suffered greatly without the collaboration of Queen, Freddie manages to reunite with his bandmates just in time for Live Aid. While bravely facing a recent AIDS diagnosis, Freddie leads the band in one of the greatest performances in the history of rock music. Queen cements a legacy that continues to inspire outsiders, dreamers and music lovers to this day</h6>
+                <h6 class='discription'>{ACTORS[ActorName].Bio}</h6>
+                <ul class='discription' style={{listStyleType:'none'}}>
+  <li>Films : {ACTORS[ActorName].Films}</li>
+  <li>Birthday : {ACTORS[ActorName].DOB}</li>
+  <li>Height : {ACTORS[ActorName].height} feet</li>
+</ul>  
             </div>
-              <div className="card-block" style={{padding:'20px'}}>
+              {/* <div className="card-block" style={{padding:'20px'}}>
                 <h5 className="card-title "> Comments </h5>
 
                 <div className="form-group">
@@ -77,7 +82,7 @@ class Actor extends Component {
                 <button type="submit" class="btn btn-warning submit">
                   Submit
                 </button>
-              </div>
+              </div> */}
             </div>
 
           </div>
