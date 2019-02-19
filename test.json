@@ -1,0 +1,224 @@
+{
+    "Movies" : {
+      "Antman" : {
+        "Title" : "Ant-Man",
+        "TrailerUrl" : "pWdKf3MneyI"
+      },
+      "BohemainRhapsody" : {
+        "Title" : "Bohemian Rhapsody",
+        "TrailerUrl" : "mP0VHJYFOAU",
+        "discription" : "ohemian Rhapsody is a foot-stomping celebration of Queen, their music and their extraordinary lead singer Freddie Mercury. Freddie defied stereotypes and shattered convention to become one of the most beloved entertainers on the planet. The film traces the meteoric rise of the band through their iconic songs and revolutionary sound. They reach unparalleled success, but in an unexpected turn Freddie, surrounded by darker influences, shuns Queen in pursuit of his solo career. Having suffered greatly without the collaboration of Queen, Freddie manages to reunite with his bandmates just in time for Live Aid. While bravely facing a recent AIDS diagnosis, Freddie leads the band in one of the greatest performances in the history of rock music. Queen cements a legacy that continues to inspire outsiders, dreamers and music lovers to this day"
+      },
+      "HacksawRidge" : {
+        "Title" : " Hacksaw Ridge",
+        "TrailerUrl" : "s2-1hz1juBI",
+        "discription" : "The true story of Pfc. Desmond T. Doss (Andrew Garfield), who won the Congressional Medal of Honor despite refusing to bear arms during WWII on religious grounds. Doss was drafted and ostracized by fellow soldiers for his pacifist stance but went on to earn respect and adoration for his bravery, selflessness and compassion after he risked his life -- without firing a shot -- to save 75 men in the Battle of Okinawa"
+      },
+      "MissonImpossibleFallout" : {
+        "Title" : "Misson Impossible: Fallout",
+        "TrailerUrl" : "XiHiW4N7-bo",
+        "discription" : "Ethan Hunt and the IMF team join forces with CIA assassin August Walker to prevent a disaster of epic proportions. Arms dealer John Lark and a group of terrorists known as the Apostles plan to use three plutonium cores for a simultaneous nuclear attack on the Vatican, Jerusalem and Mecca, Saudi Arabia. When the weapons go missing, Ethan and his crew find themselves in a desperate race against time to prevent them from falling into the wrong hands."
+      },
+      "ReadyPlayerOne" : {
+        "Title" : "Ready Player One",
+        "TrailerUrl" : "cSp1dM2Vj48",
+        "discription" : "From filmmaker Steven Spielberg comes the science fiction action adventure “Ready Player One,” based on Ernest Cline’s bestseller of the same name, which has become a worldwide phenomenon. The film is set in 2045, with the world on the brink of chaos and collapse. But the people have found salvation in the OASIS, an expansive virtual reality universe created by the brilliant and eccentric James Halliday (Mark Rylance). When Halliday dies, he leaves his immense fortune to the first person to find a digital Easter egg he has hidden somewhere in the OASIS, sparking a contest that grips the entire world. When an unlikely young hero named Wade Watts (Tye Sheridan) decides to join the contest, he is hurled into a "
+      },
+      "infinityWar" : {
+        "Title" : "Marvel's Infinity War",
+        "TrailerUrl" : "6ZfuNTqbHE8",
+        "discription" : "The Infinity War is a six-issue comic book limited series published by Marvel Comics in 1992. The series was written by Jim Starlin and penciled by Ron"
+      },
+      "interview" : {
+        "Title" : "The Interview",
+        "TrailerUrl" : "frsvWVEHowg",
+        "discription" : "Dave Skylark (James Franco) and his producer Aaron Rapoport (Seth Rogen) are the team behind the popular tabloid-TV show After learning that North Korea's Kim Jong Un (Randall Park) is a huge fan of the show, they successfully set up an interview with him, hoping to legitimize themselves as actual journalists. However, as Dave and Aaron prepare for their journey to Pyongyang, the CIA steps in, recruits them, and assigns them an incredible mission: Assassinate the dictator."
+      },
+      "johnWick" : {
+        "Title" : "John Wick",
+        "TrailerUrl" : "2AUmvWm5ZDQ",
+        "discription" : "Legendary assassin John Wick (Keanu Reeves) retired from his violent career after marrying the love of his life. Her sudden death leaves John in deep mourning. When sadistic mobster Iosef Tarasov (Alfie Allen) and his thugs steal John's prized car and kill the puppy that was a last gift from his wife, John unleashes the remorseless killing machine within and seeks vengeance. Meanwhile, Iosef's father (Michael Nyqvist) -- John's former colleague -- puts a huge bounty on John's head"
+      },
+      "justiceLeague" : {
+        "TrailerUrl" : "r9-DM9uBtVI",
+        "discription" : "Fuelled by his restored faith in humanity, and inspired by Superman's selfless act, Bruce Wayne enlists newfound ally Diana Prince to face an even greater threat. Together, Batman and Wonder Woman work quickly to recruit a team to stand against this newly-awakened enemy. Despite the formation of an unprecedented league of heroes in Batman, Wonder Woman, Aquaman, Cyborg and the Flash, it may be too late to save the planet from an assault of catastrophic proportions",
+        "title" : "Justice League"
+      },
+      "oceanEight" : {
+        "Title" : "Ocean\"s Eight",
+        "TrailerUrl" : "MFWF9dU5Zc0",
+        "discription" : "Five years, eight months, 12 days and counting -- that's how long Debbie Ocean has been devising the biggest heist of her life. She knows what it's going to take -- a team of the best people in the field, starting with her partner-in-crime Lou Miller. Together, they recruit a crew of specialists, including jeweler Amita, street con Constance, suburban mom Tammy, hacker Nine Ball, and fashion designer Rose. Their target -- a necklace that's worth more than $150 million."
+      },
+      "whiteHouseDown" : {
+        "Title" : "White House Down",
+        "TrailerUrl" : "WfaTlmYvTA8",
+        "discription" : ""
+      },
+      "wonderWomen" : {
+        "Title" : "Wonder Women",
+        "TrailerUrl" : "1Q8fG0TtVAY",
+        "discription" : "Before she was Wonder Woman (Gal Gadot), she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, Diana meets an American pilot (Chris Pine) who tells her about the massive conflict that's raging in the outside world. Convinced that she can stop the threat, Diana leaves her home for the first time. Fighting alongside men in a war to end all wars, she finally discovers her full powers and true destiny."
+      }
+    },
+    "News" : {
+      "-LYgsxan-9ilSQx4f1Jx" : {
+        "articleCreated" : "10 February 2019",
+        "description" : "We’ve been hearing talk for a little while now that Margot Robbie may not be reprising her role as Harley Quinn for James Gunn’s The Suicide Squad, and in a new report from Forbes, the same info is relayed, along with the suggestion that we won’t be seeing much of Jared Leto’s Joker in the DCEU’s future.As you may have heard already, Gunn’s follow-up to 2016’s Suicide Squad is serving as a soft reboot for the series, which means that the movie will feature a mostly new cast. Sure enough, according to Forbes, the Clown Princess of Crime will likely be among the characters who aren’t coming back for the next film, which is allegedly going to avoid direct tie-ins to the events of the first movie. On top of that, it’s reported that the Joker and Harley Quinn movie and",
+        "frontImg" : "https://media.alienwarearena.com/media/harley-quinn-suicide-squad.png",
+        "headline" : "Harley Quinn Not Expected To Return In James Gunn’s 'The Suicide Squad' ",
+        "insideImg" : "https://i.kinja-img.com/gawker-media/image/upload/s--PZkuxNDG--/c_scale,f_auto,fl_progressive,q_80,w_800/c9bsghfmyadrzeyux5kv.jpg"
+      },
+      "-LYgu32kTMGgbmaBlKd2" : {
+        "articleCreated" : "13 February 2019",
+        "description" : "After months of speculation, today is full of actual news on Vince Gilligan‘s feature follow-up to all-time great “Breaking Bad.” First, Deadline reported that the mysterious movie sequel to the show will not only be headed back to its original home on AMC but it will also be on Netflix. The Hollywood Reporter didn’t want to be left behind, with even bigger news for fans of the show: Aaron Paul is confirmed to be returning to the role of Jesse Pinkman, who has been kidnapped and will try to escape in this movie",
+        "frontImg" : "https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/08/07/17/pg-46-breaking-bad-1.jpg?w968h681",
+        "headline" : "Aaron Paul Is In For Vince Gilligan’s ‘Breaking Bad’ Sequel At AMC – And Netflix",
+        "insideImg" : "https://pmcvariety.files.wordpress.com/2013/07/breaking-bad-season-5.jpg?w=1000&h=563&crop=1"
+      },
+      "-LYguETUqPx8Mn0s44b2" : {
+        "articleCreated" : "10 February 2019",
+        "description" : "A change of outfit can do wonders for one’s outlook on life. Just ask Robert Ellis. Never one to be bashful about the pleasures of a good suit — witness his specially made space cowboy threads from recent years — he wears that flair firmly on the sleeve of his new LP, Texas Piano Man. Donning a sharp white tuxedo that gleams like a blank slate against the blue skies and rolling hills of Marfa, Texas, it’s a turn that Ellis comes by honestly.This idea of the ‘Texas Piano Man' ",
+        "frontImg" : "https://www.rollingstone.com/wp-content/uploads/2018/06/rs-245824-static1.squarespace.jpg?crop=900:600&width=300",
+        "headline" : "Why Robert Ellis Looked to Liberace for New Album ‘Texas Piano Man’",
+        "insideImg" : "https://www.rollingstone.com/wp-content/uploads/2019/02/ELLISxg5e_robertellishighresnegative3.jpg?crop=900:600&width=1440"
+      },
+      "-LYgupNjrb5CwuZ79ggS" : {
+        "articleCreated" : "9 February 2019",
+        "description" : "Disney-Marvel’s blockbuster “Black Panther” has dominated nominations for the 50th annual NAACP Image Awards, scoring a leading 13 nods. “Black Panther” was recognized in the outstanding motion picture category alongside “If Beale Street Could Talk,” “BlacKkKlansman,” “Crazy Rich Asians,” and “The Hate U Give.”Chadwick Boseman, who plays the eponymous superhero, and director Ryan Coogler were also nominated for the NAACP’s special award for entertainer of the year along with Beyonce, Regina King, and LeBron James.",
+        "frontImg" : "https://thumbor.forbes.com/thumbor/600x315/https%3A%2F%2Fblogs-images.forbes.com%2Fscottmendelson%2Ffiles%2F2018%2F02%2Fau_rich_hero_blackpanther_1_3c317c85-1200x526.jpeg",
+        "headline" : "‘Black Panther’ Leads NAACP Image Awards Nominations",
+        "insideImg" : "https://i.annihil.us/u/prod/marvel/movies/blackpanther/social/assets/global_share_1200x630.jpg"
+      }
+    },
+    "Users" : {
+      "5ciCHavwAqNiAut1tT1pDQLkLHF2" : {
+        "UID" : "5ciCHavwAqNiAut1tT1pDQLkLHF2"
+      },
+      "iUsBN07UuBNQIUQfXKiWBlIc7RT2" : {
+        "UID" : "iUsBN07UuBNQIUQfXKiWBlIc7RT2"
+      }
+    } , 
+    "Actors" : {
+  "JohnnyDepp" : {
+    "name":"Johnny Depp",
+    "Bio":"Johnny Depp is perhaps one of the most versatile actors of his day and age in Hollywood.  He was born John Christopher Depp II in Owensboro, Kentucky, on June 9, 1963, to Betty Sue (Wells), who worked as a waitress, and John Christopher Depp, a civil engineer.", 
+    "Films":" Pirates of the Caribbean: The Curse of the Black Pearl",
+    "BOB":"June 9, 1963",
+    "height":"5'4" , 
+     "imageURL" : "https://m.media-amazon.com/images/M/MV5BMTM0ODU5Nzk2OV5BMl5BanBnXkFtZTcwMzI2ODgyNQ@@._V1_UY209_CR3,0,140,209_AL_.jpg"
+  } , 
+  "AlPacino" : {
+    "name":"Al Pacino",
+    "Bio":"One of the greatest actors in all of film history, Al Pacino established himself during one of cinema's most vibrant decades, the 1970s, and has become an enduring and iconic figure in the world of American movies.  Alfredo James Pacino was born on April 25, 1940 in Manhattan, New York City, to an", 
+    "Films":"Serpico",
+    "BOB":"July 9, 1963",
+    "height":"5'4" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BMTQzMzg1ODAyNl5BMl5BanBnXkFtZTYwMjAxODQ1._V1_UX140_CR0,0,140,209_AL_.jpg"
+  
+   
+  } ,
+  "RobertDeNiro" : {
+    "name":"Robert De Niro",
+    "Bio":"One of the greatest actors of all time, Robert De Niro was born on August 17, 1943 in Manhattan, New York City, to artists Virginia (Admiral) and Robert De Niro Sr. His paternal grandfather was of Italian descent, and his other ancestry is English, Dutch, German, French and Irish. He was trained at...", 
+    "Films":"Raging Bull",
+    "BOB":"June 9, 1963",
+    "height":"5'4" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BMjAwNDU3MzcyOV5BMl5BanBnXkFtZTcwMjc0MTIxMw@@._V1_UY209_CR9,0,140,209_AL_.jpg"
+  
+   
+  } ,
+  "KevinSpacey" : {
+    "name":"Kevin Spacey",
+    "Bio":"Kevin Spacey Fowler, better known by his stage name Kevin Spacey, is an American actor of screen and stage, film director, producer, screenwriter and singer. He began his career as a stage actor during the 1980s before obtaining supporting roles in film and television. He gained critical acclaim in...", 
+    "Films":"The Usual Suspects",
+    "BOB":"June 9, 1963",
+    "height":"5'7" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BMTY1NzMyODc3Nl5BMl5BanBnXkFtZTgwNzE2MzA1NDM@._V1_UY209_CR58,0,140,209_AL_.jpg"
+  
+   
+  } ,
+  "DenzelWashington" : {
+    "name":"Denzel Washington",
+    "Bio":"Denzel Hayes Washington, Jr. was born on December 28, 1954 in Mount Vernon, New York. He is the middle of three children of a beautician mother, Lennis, from Georgia, and a Pentecostal minister father, Denzel Washington, Sr., from Virginia. After graduating from high school, Denzel enrolled at ...", 
+    "Films":"Fences",
+    "BOB":"June 9, 1963",
+    "height":"5'7" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BMjE5NDU2Mzc3MV5BMl5BanBnXkFtZTcwNjAwNTE5OQ@@._V1_UY209_CR8,0,140,209_AL_.jpg"
+  
+   
+  } ,
+  "RussellCrowe" : {
+    "name":"Russell Crowe",
+    "Bio":"Russell Ira Crowe was born in Wellington, New Zealand, to Jocelyn Yvonne (Wemyss) and John Alexander Crowe, both of whom catered movie sets. His maternal grandfather, Stanley Wemyss, was a cinematographer. Crowe's recent ancestry includes Welsh (where his paternal grandfather was born, in Wrexham),...", 
+    "Films":"Les Misérables",
+    "BOB":"June 9, 1963",
+    "height":"5'4" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BMTQyMTExNTMxOF5BMl5BanBnXkFtZTcwNDg1NzkzNw@@._V1_UX140_CR0,0,140,209_AL_.jpg"
+  
+   
+  } ,
+  "BradPitt" : {
+    "name":"Brad Pitt",
+    "Bio":"An actor and producer known as much for his versatility as he is for his handsome face, Golden Globe-winner Brad Pitt's most widely recognized role may be Tyler Durden in Fight Club (1999). However, his portrayals of Billy Beane in Moneyball (2011), and Rusty Ryan in the remake of Ocean's Eleven", 
+    "Films":"Twelve Monkeys",
+    "BOB":"June 9, 1963",
+    "height":"5'4" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BMjA1MjE2MTQ2MV5BMl5BanBnXkFtZTcwMjE5MDY0Nw@@._V1_UX140_CR0,0,140,209_AL_.jpg"
+  
+   
+  } ,
+  "AngelinaJolie" : {
+    "name":"Angelina Jolie",
+    "Bio":"Angelina Jolie is an Academy Award-winning actress who became popular after playing the title role in the "Lara Croft" blockbuster movies, as well as Mr. & Mrs. Smith (2005), Wanted (2008), Salt (2010) and Maleficent (2014). Off-screen, Jolie has become prominently involved in internationa", 
+    "Films":"Maleficent",
+    "BOB":"June 9, 1963",
+    "height":"5'4" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BODg3MzYwMjE4N15BMl5BanBnXkFtZTcwMjU5NzAzNw@@._V1_UY209_CR15,0,140,209_AL_.jpg"
+  
+   
+  } ,
+  "LeonardoDiCaprio" : {
+    "name":"Leonardo DiCaprio",
+    "Bio":"Few actors in the world have had a career quite as diverse as Leonardo DiCaprio's. DiCaprio has gone from relatively humble beginnings, as a supporting cast member of the sitcom Growing Pains (1985) and low budget horror movies, such as Critters 3 (1991), to a major teenage heartthrob in the 1990s", 
+    "Films":"Inception",
+    "BOB":"June 9, 1963",
+    "height":"5'4" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_UY209_CR7,0,140,209_AL_.jpg"
+  
+   
+  } ,
+  "TomCruise" : {
+    "name":"Tom Cruise",
+    "Bio":"In 1976, if you had told fourteen year-old Franciscan seminary student Thomas Cruise Mapother IV that one day in the not too distant future he would be Tom Cruise, one of the top 100 movie stars of all time, he would have probably grinned and told you that his ambition was to join the priesthood. ...", 
+    "Films":"Top Gun",
+    "BOB":"June 9, 1963",
+    "height":"5'4" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BMTk1MjM3NTU5M15BMl5BanBnXkFtZTcwMTMyMjAyMg@@._V1_UY209_CR9,0,140,209_AL_.jpg"
+  
+   
+  } ,
+  "JohnTravolta" : {
+    "name":"John Travolta",
+    "Bio":"John Joseph Travolta was born in Englewood, New Jersey, one of six children of Helen Travolta (née Helen Cecilia Burke) and Salvatore/Samuel J. Travolta. His father was of Italian descent and his mother was of Irish ancestry. His father owned a tire repair shop called Travolta Tires in Hillsdale, ..", 
+    "Films":"Battlefield Earth",
+    "BOB":"June 9, 1963",
+    "height":"5'4" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BMTUwNjQ0ODkxN15BMl5BanBnXkFtZTcwMDc5NjQwNw@@._V1_UY209_CR7,0,140,209_AL_.jpg"
+  
+   
+  } ,
+  " ArnoldSchwarzenegger" : {
+    "name":" Arnold Schwarzenegger",
+    "Bio":"With an almost unpronounceable surname and a thick Austrian accent, who would have ever believed that a brash, quick talking bodybuilder from a small European village would become one of Hollywood's biggest stars, marry into the prestigious Kennedy family, amass a fortune via shrewd investments and...", 
+    "Films":"Predator",
+    "BOB":"June 9, 1963",
+    "height":"5'4" ,
+    "imageURL" : "https://m.media-amazon.com/images/M/MV5BMTI3MDc4NzUyMV5BMl5BanBnXkFtZTcwMTQyMTc5MQ@@._V1_UY209_CR13,0,140,209_AL_.jpg"
+  
+   
+  } 
+  
+    }
+    
+  }
+  
