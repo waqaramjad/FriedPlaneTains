@@ -22,6 +22,7 @@ class MoviePage extends Component {
   render() {
     console.log(this.props)
       let MovieNames=this.props.match.params.moviename;
+      console.log(MovieNames)
       // let TrailerSource="https://www.youtube.com/embed/"+Movies[MovieNames].TrailerUrl;
       let TrailerSource="https://www.youtube.com/embed/mP0VHJYFOAU"
     return (

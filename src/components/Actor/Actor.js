@@ -8,20 +8,21 @@ import {
 
 } from "../../store/actions/action";
 import './SingleMovieStyle.css'
-var Movies ; 
+var ACTORS ; 
 
 
 class Actor extends Component {
     constructor(props){
         super(props);
-        Movies = this.props.MOVIES
+        ACTORS = this.props.ACTORS
         this.state={
          
         }
     }
   render() {
     console.log(this.props)
-      let MovieNames=this.props.match.params.moviename;
+      let ActorName=this.props.match.params.ActorName;
+      console.log('MovieNames' , MovieNames)
       // let TrailerSource="https://www.youtube.com/embed/"+Movies[MovieNames].TrailerUrl;
       let TrailerSource="https://www.youtube.com/embed/mP0VHJYFOAU"
     return (
@@ -93,7 +94,7 @@ function mapStateToProp(state) {
   return {
     userName: state.reducer.name,
     CurrentUser: state.reducer.currentUser, 
-    MOVIES : state.reducer.MOVIES
+    ACTORS : state.reducer.ACTORS
 
   };
 }
