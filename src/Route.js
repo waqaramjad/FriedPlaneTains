@@ -37,7 +37,7 @@ class Routers extends Component {
             <Route exact path="/about" component={AboutUs} />
             <Route exact path="/Contact" component={Contact} />
             <Route exact path="/detail/:moviename" component={Movie}/>
-            {/* <Route exact path="/detail/:moviename" component={Actor}/> */}
+            <Route exact path="/Actor/:ActorName" component={Actor}/>
             <Route exact path="/news" component={News} />
             <Route exact path="/Movies" component={MoviesPage} />
             <Route exact path="/Actors" component={ActorPage} />

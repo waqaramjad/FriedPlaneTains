@@ -46,7 +46,7 @@ var actors = this.props.Actors
                   console.log(myActors)
                   return(
                     <div className="col-lg-3 col-md-3  col-6">
-                    <Link to="/detail/interview" style={{color:'black',textDecoration:'none'}}> 
+                    <Link to={"/Actor/"+data }style={{color:'black',textDecoration:'none'}}> 
                       <div className="card card-inverse card-info text-center">
                         <img
                           className="moviePosterImg image"
