@@ -30,13 +30,13 @@ class CinemaPage extends Component {
       <div id="chains" style={{textAlign: 'center', display: 'block'}} className=" fpcontainer container ">
         <h1> Choose a cinema chain</h1><h1>
           <section id>
-          <Link to={"/Actor" }style={{color:'black',textDecoration:'none'}}>        <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/genesis_logo.png)'}} className="chainbutton image" href="/home" id={1}  /> </Link>
-            <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/silverbird_logo.png)'}} className="chainbutton image" href="#" id={2} onclick="showcinema(this.id)" />
-            <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/filmhouse_logo.png)'}} className="chainbutton" href="#" id={3} onclick="showcinema(this.id)" />
-            <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/new_ozone.png)'}} className="chainbutton" href="#" id={4} onclick="showcinema(this.id)" />
-            <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/viva_logo.png)'}} className="chainbutton" href="#" id={5} onclick="showcinema(this.id)" />
-            <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/kada_logo.png)'}} className="chainbutton" href="#" id={6} onclick="showcinema(this.id)" />
-            <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/cartege_logo.png)'}} className="chainbutton" href="#" id={7} onclick="showcinema(this.id)" />
+          <Link to={"/Cinema/enesis" }style={{color:'black',textDecoration:'none'}}>        <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/genesis_logo.png)'}} className="chainbutton image" href="/home" id={1}  /> </Link>
+          <Link to={"/Cinema/cinemas" }style={{color:'black',textDecoration:'none'}}>    <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/silverbird_logo.png)'}} className="chainbutton image" href="#" id={2} onclick="showcinema(this.id)" /></Link>
+          <Link to={"/Cinema/FilmHouse" }style={{color:'black',textDecoration:'none'}}>   <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/filmhouse_logo.png)'}} className="chainbutton" href="#" id={3} onclick="showcinema(this.id)" /></Link>
+          <Link to={"/Cinema/Zone" }style={{color:'black',textDecoration:'none'}}>   <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/new_ozone.png)'}} className="chainbutton" href="#" id={4} onclick="showcinema(this.id)" /></Link>
+          <Link to={"/Cinema/Viva" }style={{color:'black',textDecoration:'none'}}>  <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/viva_logo.png)'}} className="chainbutton" href="#" id={5} onclick="showcinema(this.id)" /></Link>
+          <Link to={"/Cinema/kodo" }style={{color:'black',textDecoration:'none'}}>  <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/kada_logo.png)'}} className="chainbutton" href="#" id={6} onclick="showcinema(this.id)" /></Link>
+          <Link to={"/Cinema/Cartoe" }style={{color:'black',textDecoration:'none'}}> <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/cartege_logo.png)'}} className="chainbutton" href="#" id={7} onclick="showcinema(this.id)" /></Link>
           </section>
         </h1></div>
     );
