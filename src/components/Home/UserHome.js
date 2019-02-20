@@ -11,9 +11,25 @@ import {
   getSaveList
 
 } from "../../store/actions/action";
-const UserHome = props => {
-//  var myData = props.getSaveList()
+// const UserHome = this.props => {
+
+  class UserHome extends Component {
+    constructor(props){
+        super(props);
+       
+        this.state={
+         
+        }
+// var CinemaTag=this.this.props.match.params.CinemaName;
+//         this.this.props.CinemaData(CinemaTag)
+this.props.getSaveList()
+
+    }
+  render() {
+//  var myData = this.props.getSaveList()
 //  console.log('sdf', myData)
+// this.props.PlayList
+console.log(this.props)
   return (
     <div className="container-fluid text-center">
       <div className="row">
@@ -25,9 +41,9 @@ const UserHome = props => {
           <div className="card text-white bg-dark ">
             <div className="card-body HomeUserBackDrop">
               <p className="card-text">
-                {props.CurrentUser.userpic ? (
+                {this.props.CurrentUser.userpic ? (
                   <img
-                    src={props.CurrentUser.userpic}
+                    src={this.props.CurrentUser.userpic}
                     width={"120px"}
                     height={"120px"}
                     style={{ borderRadius: '50%'}}
@@ -36,7 +52,7 @@ const UserHome = props => {
                   <img style={{borderRadius: '50%'}} src={PlaceholderICON} width={"120px"} height={"120px"} />
                 )}
               </p>
-              <h5 className="card-title">{props.CurrentUser.displayname}</h5>
+              <h5 className="card-title">{this.props.CurrentUser.displayname}</h5>
             </div>
           </div>
         </div>
@@ -44,9 +60,9 @@ const UserHome = props => {
       </div>
       <div className="row" style={{ marginTop: "15px" }}>
         <div className="col-md-8 offset-md-2 text-left">
-          {props.CurrentUser.displayname ? (
+          {this.props.CurrentUser.displayname ? (
             <h3 className="text-left">
-              {props.CurrentUser.displayname}- REVIEWS
+              {this.props.CurrentUser.displayname}- REVIEWS
             </h3>
           ) : (
             <h3 className="text-left">Name- REVIEWS</h3>
@@ -194,6 +210,7 @@ const UserHome = props => {
       <br />
     </div>
   );
+          }
 };
 function mapStateToProp(state) {
   return {
