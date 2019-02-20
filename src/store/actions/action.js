@@ -61,6 +61,35 @@ export function MOVIESData(daa) {
           })
   }
 }
+export function SearchData() {
+  return dispatch => {
+      console.log('getStudentDataByCompany')
+
+      firebase.database().ref('Actors/').once('value')
+      .then((data) => {
+
+              console.log('Actors')
+              console.log(data.val())
+              let Actors = data.val();
+              var check = data.val()
+var arr = []
+              Object.keys(check).map((data, index) => {
+
+               var singleObject = check[data]
+               arr.push(singleObject)
+
+
+              })
+              console.log(arr)
+                            dispatch({ type: 'SEARCHDATA', payload: arr })
+              
+              
+              
+              
+              
+                        })
+                }
+              }
 export function AcrtorsData() {
 
   var arr = []

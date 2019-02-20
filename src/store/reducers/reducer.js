@@ -26,6 +26,8 @@ const reducer = (state = initial, action) => {
   
     case "GET_NEWS":
       return { ...state, News: action.payload };
+    case "SEARCHDATA":
+      return { ...state, SEARCHDATA: action.payload };
       case "SIGNOUT_USER":
       return { ...state,currentUser: action.payload };
       case "PROFILESAVELIST":

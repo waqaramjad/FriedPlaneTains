@@ -5,14 +5,25 @@ import Model from "./../components/Sliders/Model";
 // import Logo from './../socialfinderapp.png'
 import { Link } from "react-router-dom";
 import {
-  facebookSignout
+  facebookSignout , 
+  SearchData ,
 } from "../store/actions/action";
 import SelectSearch from 'react-select-search'
 import { countries, fontStacks, friends, colors } from './data';
 
 import './style.1.css';
-
-
+var cont = [
+  {name: 'Afghanistan',  iwdg:'we', wefd :'wef'},
+  {name: 'Åland Islands',  iwdg:'we', wefd :'wef'},
+  {name: 'Albania', iwdg:'we', wefd :'wef' },
+  {name: 'Algeria',  iwdg:'we', wefd :'wef'},
+  // {name: 'American Samoa', iwdg:'we', wefd :'wef' },
+  // {name: 'AndorrA', value: 'AD', iwdg:'we', wefd :'wef'},
+  // {name: 'Angola', value: 'AO', iwdg:'we', wefd :'wef'},
+  // {name: 'Anguilla', value: 'AI', iwdg:'we', wefd :'wef'},
+  // {name: 'Antarctica', value: 'AQ', iwdg:'we', wefd :'wef'}
+]
+var SEARCHDATANODE = [];
 // import SignInModel from "./../Components/SignInModel";
 class HeaderFirst extends Component {
   constructor(props){
@@ -20,6 +31,10 @@ class HeaderFirst extends Component {
     this.state={
 
     }
+    this.props.SearchData()
+    // this.setState({
+    //   Searching : SearchingData
+    // })
   }
 
   clear = () => {
@@ -27,16 +42,24 @@ class HeaderFirst extends Component {
         font: '',
         country: '',
         friends: [],
-        colors: []
+        colors: [] , 
+        SEARCHDATA : ''
+       
     });
   };
   state = {
     font: 'Playfair Display',
     country: 'SE',
     friends: [],
-    colors: ['red', 'purple']
+    colors: ['red', 'purple'] , 
+    SEARCHDATA : 'DONE'
+
 };
   render() {
+    SEARCHDATANODE = this.props.SEARCHDATA
+
+    var that = this
+    console.log('dvdf',this.props.SEARCHDATA)
     return (
       <div className="container-fluid">
         <div
@@ -55,13 +78,40 @@ class HeaderFirst extends Component {
           <div className="col">
             <form className="  my-3 my-lg-0">
               <div className="input-group ">
-              <SelectSearch
+
+              {/* {
+                this.props.SEARCHDATA!=undefined ?
+                
+                :null
+              } */}
+              {/* {this.props.SEARCHDATA!=undefined } */}
+              {
+                (function(){
+                  // do this right now
+                  if(that.props.SEARCHDATA!=undefined){
+console.log(that.props.SEARCHDATA)
+console.log(cont)
+                    return(
+  <SelectSearch
+                    name="Searching"
+                    mode="input"
+                    // value={that.state.SEARCHDATA}
+                    options={that.props.SEARCHDATA}
+                    placeholder="Search Actor and Films"
+                    onChange={(val , val1 , val2)=>{console.log('val',val1),console.log('val1',val1),console.log('val2',val2)}}
+                /> 
+)
+                  }
+                  console.log("Look at me, I'm running");
+              })()
+              }
+              {/* <SelectSearch
                     name="country"
                     mode="input"
-                    value={this.state.country}
-                    options={countries}
+                    value={this.props.country}
+                    options={this.state.Searching}
                     placeholder="Your country"
-                /> 
+                />  */}
                 <div className="input-group-append">
                   <button className="btn SearchButtonStyling" type="button">
                     Search
@@ -148,7 +198,8 @@ class HeaderFirst extends Component {
 function mapStateToProp(state) {
   return {
     userName: state.reducer.name,
-    CurrentUser: state.reducer.currentUser
+    CurrentUser: state.reducer.currentUser,
+    SEARCHDATA: state.reducer.SEARCHDATA
   };
 }
 function mapDispatchToProp(dispatch) {
@@ -164,6 +215,9 @@ function mapDispatchToProp(dispatch) {
     // }
     PerformLogout:()=>{
       dispatch(facebookSignout());
+    } , 
+    SearchData:()=>{
+      dispatch(SearchData());
     }
   };
 }

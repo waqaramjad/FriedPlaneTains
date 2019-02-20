@@ -1,10 +1,10 @@
 /** https://gist.github.com/Keeguon/2310008 */
 export const countries = [
     {name: 'Afghanistan', value: 'AF'},
-    {name: 'Åland Islands', value: 'AX'},
-    {name: 'Albania', value: 'AL'},
-    {name: 'Algeria', value: 'DZ'},
-    {name: 'American Samoa', value: 'AS'},
+    {name: 'Åland Islands', },
+    {name: 'Albania', },
+    {name: 'Algeria', },
+    {name: 'American Samoa', },
     {name: 'AndorrA', value: 'AD'},
     {name: 'Angola', value: 'AO'},
     {name: 'Anguilla', value: 'AI'},
