@@ -21,6 +21,8 @@ const reducer = (state = initial, action) => {
       return { ...state, MOVIES: action.payload };
     case "ACTORS":
       return { ...state, ACTORS: action.payload };
+    case "CINEMA":
+      return { ...state, CINEMA: action.payload };
   
     case "GET_NEWS":
       return { ...state, News: action.payload };

@@ -5,7 +5,8 @@
     MESSAGES: 'MESSAGES',
     CHANGERECPUID: 'CHANGERECPUID' , 
     MOVIES: 'MOVIES', 
-    ACTORS : ACTORS
+    ACTORS : 'ACTORS' , 
+    CINEMA : 'CINEMA'
 }
 
 export default ActionTypes;

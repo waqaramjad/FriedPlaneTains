@@ -2,12 +2,6 @@ import firebase from "firebase";
 import History from "../../History";
 
 var config = {
-  // apiKey: "AIzaSyBD50M-8ORdMi1c5VmPhT7gGR4yGEkjVcE",
-  // authDomain: "paperchatapp.firebaseapp.com",
-  // databaseURL: "https://paperchatapp.firebaseio.com",
-  // projectId: "paperchatapp",
-  // storageBucket: "paperchatapp.appspot.com",
-  // messagingSenderId: "269488541938"
   apiKey: "AIzaSyDRF28m54jiKyALkC1OX3YOpm6JAD-PmLg",
     authDomain: "friedplantainsmovies.firebaseapp.com",
     databaseURL: "https://friedplantainsmovies.firebaseio.com",
@@ -79,6 +73,26 @@ export function AcrtorsData() {
               let Actors = data.val();
 
               dispatch({ type: 'ACTORS', payload: Actors })
+
+
+
+
+
+          })
+  }
+}
+export function CinemaData(CinemaTag) {
+  return dispatch => {
+      console.log(CinemaTag)
+
+      firebase.database().ref('Cinema/').once('value')
+      .then((data) => {
+
+              console.log('Cinema')
+              console.log(data.val())
+              let Cinema = data.val();
+
+              dispatch({ type: 'CINEMA', payload: Cinema })
 
 
 
