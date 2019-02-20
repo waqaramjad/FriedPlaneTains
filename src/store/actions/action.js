@@ -136,14 +136,14 @@ export function getSaveList() {
   return dispatch => {
     // console.log(profile)
 // var filmName = profile.concat('Save')
-    // var currentUser = firebase.auth().currentUser
-    // console.log(currentUser)
-    // if(currentUser == null){
-    //   alert('Please Sign in To continue ')
-    // }
-    // else{
+    var currentUser = firebase.auth().currentUser
+    console.log(currentUser)
+    if(currentUser == null){
+      alert('Please Sign in To continue ')
+    }
+    else{
 
-      firebase.database().ref('Users/2yVIK3clqfMnkh72fqH0khwssTp1/SaveMovies').once('value')
+      firebase.database().ref('Users/'+currentUser.uid+'/SaveMovies').once('value')
       .then((data) => {
 
               // console.log('Cinema')
@@ -159,7 +159,7 @@ export function getSaveList() {
           })
   }
 }
-// }
+}
 // export function SignUpFirebase(load) {
 //     // firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
 //     //     return user.updateProfile({'displayName : document.getElementById("name").value'})}).catch(function(error) {

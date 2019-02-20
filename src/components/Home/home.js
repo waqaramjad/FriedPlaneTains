@@ -4,12 +4,16 @@ import { connect } from "react-redux";
 import MoviesList from "../Movie/MovieList";
 import Gallery from "../Sliders/AliceSlider";
 import MovieNews from '../News/NewsItem';
+import ReactSearchBox from 'react-search-box'
+
 import {
   changeName,
   GoogleSignin,
   facebookSignin , MOVIESData, GetAllNews
 } from "../../store/actions/action";
 import Carousal from "../Sliders/carousal";
+
+
 class Home extends Component {
 
   constructor(props) {
@@ -21,6 +25,9 @@ class Home extends Component {
    componentDidMount() {
     this.props.GetAllNewsFromFirebase();
   }
+
+  
+  
   render() {
     return (
       <div className="container-fluid">
@@ -28,7 +35,16 @@ class Home extends Component {
 
         <br />
         <br />
+        {/* <ReactSearchBox
+        placeholder="Placeholder"
+        value="Doe"
+        data={this.data}
+        callback={record => console.log(record)}
+      /> */}
+
+
         <div className="row">
+        
           <div className="col ">
             <h2
               style={{
@@ -46,6 +62,12 @@ class Home extends Component {
         <MoviesList />
         <br />
         <div className="row">
+        {/* <ReactSearchBox
+        placeholder="Placeholder"
+        value="Doe"
+        data={this.data}
+        callback={record => console.log(record)}
+      /> */}
           <div className="col ">
             <h2
               style={{
