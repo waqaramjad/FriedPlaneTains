@@ -7,6 +7,12 @@ import { Link } from "react-router-dom";
 import {
   facebookSignout
 } from "../store/actions/action";
+import SelectSearch from 'react-select-search'
+import { countries, fontStacks, friends, colors } from './data';
+
+import './style.1.css';
+
+
 // import SignInModel from "./../Components/SignInModel";
 class HeaderFirst extends Component {
   constructor(props){
@@ -15,6 +21,21 @@ class HeaderFirst extends Component {
 
     }
   }
+
+  clear = () => {
+    this.setState({
+        font: '',
+        country: '',
+        friends: [],
+        colors: []
+    });
+  };
+  state = {
+    font: 'Playfair Display',
+    country: 'SE',
+    friends: [],
+    colors: ['red', 'purple']
+};
   render() {
     return (
       <div className="container-fluid">
@@ -34,14 +55,13 @@ class HeaderFirst extends Component {
           <div className="col">
             <form className="  my-3 my-lg-0">
               <div className="input-group ">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Search For Movie & Actors"
-                  aria-label="Recipient's username"
-                  aria-describedby="basic-addon2"
-                 
-                />
+              <SelectSearch
+                    name="country"
+                    mode="input"
+                    value={this.state.country}
+                    options={countries}
+                    placeholder="Your country"
+                /> 
                 <div className="input-group-append">
                   <button className="btn SearchButtonStyling" type="button">
                     Search

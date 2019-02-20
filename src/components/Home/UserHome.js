@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 // import PlaceholderICON from "../../media/29.png";
 import PlaceholderICON from "../../media/29.png";
 import "../style.css";
+import SelectSearch from 'react-select-search'
 import {
   changeName,
   GoogleSignin,
@@ -12,7 +13,17 @@ import {
 
 } from "../../store/actions/action";
 // const UserHome = this.props => {
-
+  const options = [
+    {name: 'Swedish', value: 'sv'},
+    {name: 'English', value: 'en'},
+    {
+        type: 'group',
+        name: 'Group name',
+        items: [
+            {name: 'Spanish', value: 'es'},
+        ]
+    },
+];
   class UserHome extends Component {
     constructor(props){
         super(props);
