@@ -62,6 +62,8 @@ export function MOVIESData(daa) {
   }
 }
 export function AcrtorsData() {
+
+  var arr = []
   return dispatch => {
       console.log('AcrtorsData')
 
@@ -71,7 +73,17 @@ export function AcrtorsData() {
               console.log('Actors')
               console.log(data.val())
               let Actors = data.val();
+              var check = data.val()
 
+              Object.keys(check).map((data, index) => {
+
+               var singleObject = check[data]
+               arr.push(singleObject)
+
+
+
+              })
+console.log(arr)
               dispatch({ type: 'ACTORS', payload: Actors })
 
 
@@ -81,6 +93,29 @@ export function AcrtorsData() {
           })
   }
 }
+
+// export function AcrtorsData() {
+//   return dispatch => {
+//       console.log('AcrtorsData')
+
+//       firebase.database().ref('Actors/').once('value')
+//       .then((data) => {
+
+//               console.log('Actors')
+//               console.log(data.val())
+//               let Actors = data.val();
+
+//               dispatch({ type: 'ACTORS', payload: Actors })
+
+
+
+
+
+//           })
+//   }
+// }
+
+
 export function CinemaData(CinemaTag) {
   return dispatch => {
       console.log(CinemaTag)
