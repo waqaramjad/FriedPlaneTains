@@ -8,9 +8,12 @@ import {
   changeName,
   GoogleSignin,
   facebookSignin , 
-  
+  getSaveList
+
 } from "../../store/actions/action";
 const UserHome = props => {
+//  var myData = props.getSaveList()
+//  console.log('sdf', myData)
   return (
     <div className="container-fluid text-center">
       <div className="row">
@@ -195,7 +198,8 @@ const UserHome = props => {
 function mapStateToProp(state) {
   return {
     //   userName: state.reducer.name,
-    CurrentUser: state.reducer.currentUser
+    CurrentUser: state.reducer.currentUser , 
+    PlayList : state.reducer.PROFILESAVELIST
   };
 }
 function mapDispatchToProp(dispatch) {
@@ -205,7 +209,11 @@ function mapDispatchToProp(dispatch) {
     },
     PerformFBSignIn: () => {
       dispatch(facebookSignin());
-    }
+    } , 
+    getSaveList: () => {
+      dispatch(getSaveList());
+    } , 
+
   };
 }
 export default connect(

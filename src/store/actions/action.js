@@ -137,12 +137,13 @@ export function getSaveList() {
     // console.log(profile)
 // var filmName = profile.concat('Save')
     var currentUser = firebase.auth().currentUser
+    console.log(currentUser)
     if(currentUser == null){
       alert('Please Sign in To continue ')
     }
     else{
 
-      firebase.database().ref('Users/'+currentUser.uid+'/SaveMovies/').once('value')
+      firebase.database().ref('Users/2yVIK3clqfMnkh72fqH0khwssTp1/SaveMovies').once('value')
       .then((data) => {
 
               // console.log('Cinema')
@@ -319,7 +320,7 @@ export function GoogleSignin() {
         };
         localStorage.setItem("Userlog", JSON.stringify(obj));
         console.log(obj);
-        firebase.database().ref('/Users/'+user.uid).set({UID:user.uid});
+        firebase.database().ref('/Users/'+user.uid).update({UID:user.uid});
         dispatch({ type: "CURRENT_USER", payload: obj });
 
         // location="homepage.html";
