@@ -26,7 +26,29 @@ class Home extends Component {
     this.props.GetAllNewsFromFirebase();
   }
 
-  
+  ata = [
+    {
+      key: 'john',
+      value: 'John Doe',
+    },
+    {
+      key: 'jane',
+      value: 'Jane Doe',
+    },
+    {
+      key: 'mary',
+      value: 'Mary Phillips',
+    },
+    {
+      key: 'robert',
+      value: 'Robert',
+    },
+    {
+      key: 'karius',
+      value: 'Karius',
+    },
+  ]
+
   
   render() {
     return (
@@ -35,12 +57,41 @@ class Home extends Component {
 
         <br />
         <br />
-        {/* <ReactSearchBox
+        <ReactSearchBox
         placeholder="Placeholder"
-        value="Doe"
-        data={this.data}
-        callback={record => console.log(record)}
-      /> */}
+        value=""
+        data={[
+            {
+            key1: 'john',
+            value: 'John Doe',
+            discription :{
+              key: 'john',
+              value: 'John Doe',
+
+            }
+          },
+          {
+            
+            value: 'Jane Doe 2',
+          },
+          {
+            key: 'mary',
+            value: 'Mary Phillips',
+          },
+          {
+            key: 'robert',
+            value: 'Robert',
+          },
+          {
+            key: 'karius',
+            value: 'Karius',
+          },
+        ]}
+        callback={record => console.log('callback',record)}
+        onChange ={record => console.log('onChange' ,record)}
+        onSelect ={record => console.log('onSelect', record)}
+        
+      />
 
 
         <div className="row">
