@@ -101,7 +101,64 @@ export function CinemaData(CinemaTag) {
           })
   }
 }
+export function ProfileSaveFilmList(profile) {
+  return dispatch => {
+      console.log(profile)
+var filmName = profile.concat('Save')
+      var currentUser = firebase.auth().currentUser
+      if(currentUser == null){
+        alert('Please Sign in To continue ')
+      }
+      else{
 
+      console.log(currentUser.uid)
+      firebase.database().ref('Users/'+currentUser.uid+'/SaveMovies/'+filmName).update({SaveFilm : profile})
+      // .then((data) => {
+
+      //         console.log('Cinema')
+      //         console.log(data.val())
+      //         let Cinema = data.val();
+
+      //         dispatch({ type: 'PROFILESAVELIST', payload: Cinema })
+
+
+
+
+
+      //     })
+        }
+  }
+}
+
+
+
+export function getSaveList() {
+  return dispatch => {
+    // console.log(profile)
+// var filmName = profile.concat('Save')
+    var currentUser = firebase.auth().currentUser
+    if(currentUser == null){
+      alert('Please Sign in To continue ')
+    }
+    else{
+
+      firebase.database().ref('Users/'+currentUser.uid+'/SaveMovies/').once('value')
+      .then((data) => {
+
+              // console.log('Cinema')
+              console.log(data.val())
+              let Cinema = data.val();
+
+              dispatch({ type: 'PROFILESAVELIST', payload: Cinema })
+
+
+
+
+
+          })
+  }
+}
+}
 // export function SignUpFirebase(load) {
 //     // firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
 //     //     return user.updateProfile({'displayName : document.getElementById("name").value'})}).catch(function(error) {

@@ -28,6 +28,8 @@ const reducer = (state = initial, action) => {
       return { ...state, News: action.payload };
       case "SIGNOUT_USER":
       return { ...state,currentUser: action.payload };
+      case "PROFILESAVELIST":
+      return { ...state,PROFILESAVELIST: action.payload };
     default:
       return state;
   }

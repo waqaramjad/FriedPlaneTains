@@ -7,7 +7,8 @@ import "../style.css";
 import {
   changeName,
   GoogleSignin,
-  facebookSignin
+  facebookSignin , 
+  
 } from "../../store/actions/action";
 const UserHome = props => {
   return (

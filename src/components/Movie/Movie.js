@@ -4,12 +4,14 @@ import { connect } from "react-redux";
 import {
   changeName,
   GoogleSignin,
-  facebookSignin
+  facebookSignin , 
+  ProfileSaveFilmList
 
 } from "../../store/actions/action";
 import './SingleMovieStyle.css'
+import firebase from 'firebase'
 var Movies ; 
-
+var MovieNames
 
 class MoviePage extends Component {
     constructor(props){
@@ -18,10 +20,21 @@ class MoviePage extends Component {
         this.state={
          
         }
+        this.addPlayList = this.addPlayList.bind(this)
+    }
+
+    addPlayList(){
+console.log(MovieNames)
+var movie = MovieNames
+      this.props.ProfileSaveFilmList(movie)
+// var user = firebase.auth().currentUser
+// console.log('user' , user)
+// console.log('user.uid' , user.uid)
+
     }
   render() {
     console.log(this.props)
-      let MovieNames=this.props.match.params.moviename;
+       MovieNames=this.props.match.params.moviename;
       console.log(MovieNames)
       // let TrailerSource="https://www.youtube.com/embed/"+Movies[MovieNames].TrailerUrl;
       let TrailerSource="https://www.youtube.com/embed/mP0VHJYFOAU"
@@ -44,7 +57,7 @@ class MoviePage extends Component {
           <div className="col-md-7 ">
           {/* <div class='row'> */}
           <h3 class='topText'>Ant Man</h3><br/>
-          <button className='AddWatchBtn' >Add to watch List </button>
+          <button className='AddWatchBtn' onClick={()=>{this.addPlayList()}} >Add to watch List </button>
             
           {/* </div> */}
             <div className="card card-inverse card-primary VideoSection" style={{marginTop:'15px'}}>
@@ -100,8 +113,8 @@ function mapStateToProp(state) {
 }
 function mapDispatchToProp(dispatch) {
   return {
-    changeUserName: () => {
-      dispatch(changeName());
+    ProfileSaveFilmList: (profile) => {
+      dispatch(ProfileSaveFilmList(profile));
     },
     PerformGoogleSignIn: () => {
       dispatch(GoogleSignin());
