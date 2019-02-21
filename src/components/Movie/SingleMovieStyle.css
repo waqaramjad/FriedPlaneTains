@@ -16,7 +16,8 @@
 
 .topText {
     margin-left: 5%; 
-    color: white
+    color: white ; 
+    margin-bottom : '2%';
 
 }
 

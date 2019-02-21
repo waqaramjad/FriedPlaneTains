@@ -72,7 +72,7 @@ class MoviePage extends Component {
 
     addPlayList(){
 console.log(MovieNames)
-var movie = MovieNames
+var movie =  this.props.match.params.moviename
       this.props.ProfileSaveFilmList(movie)
 // var user = firebase.auth().currentUser
 // console.log('user' , user)
@@ -81,7 +81,7 @@ var movie = MovieNames
     }
     render() {
       return (
-        <div className="container-fluid">
+        <div className="container-fluid back">
           {this.state.MOVIES ? (
             <div>
               <div className="row">
@@ -89,13 +89,14 @@ var movie = MovieNames
                   className="col-md-11 offset-md-1"
                   style={{ marginTop: "15px" }}
                 >
-                  <h3>{this.state.MOVIES[this.state.MovieNames].Title}</h3>
+                  <h3 className='topText'>{this.state.MOVIES[this.state.MovieNames].Title}</h3>
+                  <button className='AddWatchBtn' onClick={()=>{this.addPlayList()}} >Add to watch List </button>
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-7 offset-md-1">
                   <div
-                    className="card card-inverse card-primary "
+                    className="card card-inverse card-primary VideoSection"
                     style={{ marginTop: "15px" }}
                   >
                     <div className="videoWrapper" style={{ margin: "5%" }}>
@@ -112,12 +113,10 @@ var movie = MovieNames
                       />
                     </div>
                     <div
-                      style={{
-                        marginLeft: "3%",
-                        marginRight: "3%"
-                      }}
+                       style={{
+                        marginLeft:'3%' , marginRight: '3%'}}
                     >
-                      <h6>
+                      <h6 className='discription'>
                         {this.state.MOVIES[this.state.MovieNames].discription}
                       </h6>
                     </div>
