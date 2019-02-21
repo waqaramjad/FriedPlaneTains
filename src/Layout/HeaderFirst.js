@@ -77,6 +77,7 @@ class HeaderFirst extends Component {
           <Link to="/" className="menuItem" onClick={() => this.closeMenu()}>
             Home
           </Link>
+          
           {/* <Link
             to="/"
             className="menuItem"
@@ -280,6 +281,7 @@ class HeaderFirst extends Component {
             </div>
             {/* fourth col ends of menu */}
           </div>
+          
           {/* first row ends which contains our navbar */}
           {/* second row contains our search bar  */}
           <div className="row">
@@ -302,7 +304,7 @@ class HeaderFirst extends Component {
                     // options={countries}
                     placeholder="Search For Movie & Actors"
                 />  */}
-                  {
+                {
                 (function(){
                   // do this right now
                   console.log('comin')
@@ -324,10 +326,11 @@ console.log(that.props.SEARCHDATA)
                   console.log("Look at me, I'm running");
               })()
               }
+              
                 <div className="input-group-append">
-                  <button className="btn SearchButtonStyling" type="button">
+                  {/* <button className="btn SearchButtonStyling" type="button">
                     Search
-                  </button>
+                  </button> */}
                 </div>
               </div>
               </div>

@@ -70,7 +70,7 @@ class MoviePage extends Component {
                             <p>Article created on: {x.articleCreated}</p>
                             <p> {x.description} </p>
 
-                            <h5 className="card-title "> Comments </h5>
+                            {/* <h5 className="card-title "> Comments </h5>
 
                             <div className="form-group">
                               <textarea
@@ -83,7 +83,7 @@ class MoviePage extends Component {
                             </div>
                             <button type="submit" class="btn btn-warning">
                               Submit
-                            </button>
+                            </button> */}
                           </div>
                         ) : (
                           <div
@@ -92,9 +92,9 @@ class MoviePage extends Component {
                           >
                             <p>Article created on: {x.articleCreated}</p>
                             <p> {x.description} </p>
-                            <h5 style={{ padding: "20px" }}>
+                            {/* <h5 style={{ padding: "20px" }}>
                               Please login to Comment...
-                            </h5>
+                            </h5> */}
                           </div>
                         )}
                       </div>
