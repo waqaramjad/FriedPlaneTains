@@ -34,6 +34,7 @@ class HeaderFirst extends Component {
     this.setState({ menuOpen: !this.state.menuOpen });
   }
   render() {
+    var that = this
     return (
       // main div start
       <div>
@@ -60,16 +61,25 @@ class HeaderFirst extends Component {
             Contact
           </Link>
           <Link
+            to="/Actors"
+            className="menuItem"
+            onClick={() => this.closeMenu()}
+          >
+            Actors
+          </Link>
+          <Link
             to="/news"
             className="menuItem"
             onClick={() => this.closeMenu()}
           >
             News
           </Link>
+
+          
           <Link
             className=" dropdown-toggle menuItem"
             data-toggle="dropdown"
-            to="#"
+            to="/Movies"
             role="button"
             aria-haspopup="true"
             aria-expanded="false"
@@ -78,25 +88,19 @@ class HeaderFirst extends Component {
             <div className="dropdown-menu">
             <Link
               className="dropdown-item"
-              to="/"
-              onClick={() => this.closeMenu()}
+              to="/Movies"
+              onClick={() => that.closeMenu()}
             >
-              New In Theaters
+              Movies
             </Link>
             <Link
               className="dropdown-item"
-              to="/"
-              onClick={() => this.closeMenu()}
+              to="/Cinema"
+              onClick={() => that.closeMenu()}
             >
-              Coming Soon
+              Cinema
             </Link>
-            <Link
-              className="dropdown-item"
-              to="/"
-              onClick={() => this.closeMenu()}
-            >
-              Highly rated
-            </Link>
+         
           </div>
           </Link>
          
