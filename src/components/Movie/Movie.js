@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
+import  Comment from '../Comment/Comment'
+
 import {
   changeName,
   GoogleSignin,
   facebookSignin , 
-  ProfileSaveFilmList
+  ProfileSaveFilmList , 
+  MOVIESData,CommentOnMovie,GetCommentsofMovie
 
 } from "../../store/actions/action";
 import './SingleMovieStyle.css'
@@ -18,10 +21,54 @@ class MoviePage extends Component {
         super(props);
         Movies = this.props.MOVIES
         this.state={
-         
+          MOVIES: "",
+      MovieNames: "",
+      commentText:'',
         }
         this.addPlayList = this.addPlayList.bind(this)
     }
+
+    PerformComment=(event)=>{
+
+      this.setState({
+       commentText:event.target.value
+   })
+   console.log(this.state.commentText);
+   }
+
+   SaveComment=()=>{
+    let commentObj={
+      userWhoPerformedTheComment:this.props.CurrentUser.displayname,
+      pictureOfTheUser:this.props.CurrentUser.userpic,
+      Comment:this.state.commentText,
+      NameOftheMovie:this.state.MovieNames
+    }
+    this.props.PerformCommentOnMovies(commentObj);
+    this.setState({
+      commentText:''
+  });
+
+   }
+
+   
+   componentDidMount() {
+    if (this.props.MOVIES) {
+      // console.log(this.props.MOVIES ,"from 23");
+      // var MovieNames = this.props.match.params.moviename;
+      //  var TrailerSource =
+      //  "https://www.youtube.com/embed/" + this.props.MOVIES[MovieNames].TrailerUrl;
+     this.props.GetAllComments(this.props.match.params.moviename);
+     
+      this.setState({
+        MOVIES: this.props.MOVIES,
+        MovieNames: this.props.match.params.moviename,
+       
+      });
+    }
+
+
+  }
+
 
     addPlayList(){
 console.log(MovieNames)
@@ -107,7 +154,8 @@ function mapStateToProp(state) {
   return {
     userName: state.reducer.name,
     CurrentUser: state.reducer.currentUser, 
-    MOVIES : state.reducer.MOVIES
+    MOVIES : state.reducer.MOVIES , 
+    Comments:state.reducer.latestComment
 
   };
 }
@@ -121,7 +169,14 @@ function mapDispatchToProp(dispatch) {
     },
     PerformFBSignIn: () => {
       dispatch(facebookSignin());
+    }, 
+    PerformCommentOnMovies:(data)=>{
+      dispatch(CommentOnMovie(data));
     }
+    ,GetAllComments:(data)=>{
+      dispatch(GetCommentsofMovie(data))
+    }
+
   };
 }
 

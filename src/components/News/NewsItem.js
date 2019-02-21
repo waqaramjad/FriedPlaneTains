@@ -1,13 +1,15 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+
+
 const MovieNewsItem = props => {
   return (
     <div className="card">
     <div className="row">
      
       <div className="col-md-4">
-        <img src={props.frontImg} style={{ padding: "20px" }} className="NewsPicture w-100" />
+        <img src={props.frontImg} style={{ padding: "20px" }} className="NewsPicture w-100" alt="contains cover News "/>
       </div>
       <div className="col-md-8 " style={{ padding: "20px" }}>
        <h4>{props.heading}</h4>
