@@ -5,6 +5,7 @@ import Home from "./components/Home/home";
 import UserHome from "./components/Home/UserHome";
 import Signin from "./components/Auth/Sign-in";
 import AboutUs from "./components/About/AboutUs";
+import TOS from "./components/About/termOfService";
 import Header from './Layout/Header';
 import HeaderOne from './Layout/HeaderFirst';
 import Movie from './components/Movie/Movie';
@@ -37,6 +38,7 @@ class Routers extends Component {
             <Route exact path="/login" component={Signin} />
             {/* <Route exact path="/contact" component={AboutUs} /> */}
             <Route exact path="/about" component={AboutUs} />
+            <Route exact path="/TOS" component={TOS} />
             <Route exact path="/Contact" component={Contact} />
             <Route exact path="/detail/:moviename" component={Movie}/>
             <Route exact path="/Actor/:ActorName" component={Actor}/>
