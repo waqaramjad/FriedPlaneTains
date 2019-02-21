@@ -52,9 +52,19 @@
   color:#29302d;
 }
 .navbar-expand-lg2{
-  background-color: #29302d ;
-  border-color: #29302d;
+  background-color: #FF8D1B ;
+  border-color: #FF8D1B;
+  border-bottom: 10px solid  #29302d;
   color:#FFFFFF;
+
+ padding: 0px;
+}
+.specialLogo{
+  background-color:  #29302d;
+ margin: 0px;
+ padding: 0px;
+  -webkit-clip-path: polygon(0 0, 74% 0, 100% 100%, 0 100%);
+clip-path: polygon(0 0, 74% 0, 100% 100%, 0 100%);
 }
 .navbar-expand-lg  .navbar-nav > .active > a,
 .navbar-expand-lg  .navbar-nav > .active > a:focus,
@@ -91,12 +101,121 @@
 
  
 }
+.headerDisplaySmallDevice{
+display: none;
+}
+.headerDisplayBigDevice{
+  display: block;
+}
+.navbarTextSize{
+  font-size:23px ;
+  color:white;
+  font-weight: bold;
+  
+}
+.navbarIconSize{
+  font-size: 24px;
+  color:white;
+}
+.navbarTextSize:hover{
+  color:#f4f142;
+  cursor: pointer;
+}
+.navbarIconSize:hover{
+color:#f4f142;
+cursor: pointer;
+}
 
+.iconSize{
+  height: 100%;
+  width: 90%;
+}
+.iconsizeBig{
+  height: 100%;
+  width: 80%;
+  padding: 0px;
+  margin: 0px;
+}
 @media (max-width:750px){
   .headerNavigationGap{
     margin:0px 0px;
   
    
   }
+ 
 }
 
+
+/* Breakpoint XS */
+@media (max-width: 575px)
+{
+  .headerDisplayBigDevice{
+    display: none;
+  }
+  .headerDisplaySmallDevice{
+    display: block;
+    }
+    .navbarTextSize{
+      font-size:13px;
+    }
+    .navbarIconSize{
+      font-size: 14px;
+    }
+}
+/* Breakpoint SM */
+@media (min-width: 576px) and (max-width: 767px)
+{
+  .headerDisplayBigDevice{
+    display: none;
+  }
+  .headerDisplaySmallDevice{
+    display: block;
+    }
+    .navbarTextSize{
+      font-size:15px;
+    }
+    .navbarIconSize{
+      font-size: 16px;
+    }
+    
+}
+/* Breakpoint MD */
+@media (min-width: 768px) and (max-width: 991px)
+{
+  .headerDisplayBigDevice{
+    display: block;
+  }
+  .headerDisplaySmallDevice{
+    display: none;
+    }
+    .navbarTextSize{
+      size:15px;
+    }
+    .navbarIconSize{
+      size: 17px;
+    }
+    
+}
+
+/* Breakpoint LG */
+@media (min-width: 992px) and (max-width: 1199px)
+{
+  
+  .headerDisplayBigDevice{
+    display: block;
+  }
+  .headerDisplaySmallDevice{
+    display: none;
+    }
+}
+
+/* Breakpoint XL */
+@media (min-width: 1200px)
+{
+  .headerDisplayBigDevice{
+    display: block;
+  }
+  .headerDisplaySmallDevice{
+    display: none;
+    }
+}

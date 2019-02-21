@@ -30,7 +30,7 @@ class Routers extends Component {
         <div className="theme">
           <div className="fl-page">
           <HeaderOne/>
-          <Header/>
+          {/* <Header/> */}
             <Route exact path="/" component={Home} />
 
             <Route exact path="/User" component={UserHome} />

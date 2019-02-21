@@ -1,7 +1,7 @@
 import React from "react";
 // import { Grid, Row, Col } from "react-bootstrap";
 import FBicon from "./../media/fbsvg.svg";
-import Twittericon from "./../media/twittersvg.svg";
+import Twittericon from "../media/twittersvg.svg";
 import Instaicon from "./../media/insta.svg";
 import { Link } from "react-router-dom";
 const Footer = () => {

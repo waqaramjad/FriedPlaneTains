@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import MoviesList from "../Movie/MovieList";
 import Gallery from "../Sliders/AliceSlider";
 import MovieNews from '../News/NewsItem';
-import ReactSearchBox from 'react-search-box'
+// import ReactSearchBox from 'react-search-box'
 import { countries, fontStacks, friends, colors } from './data';
 import './style.css';
 import {
@@ -13,7 +13,7 @@ import {
   facebookSignin , MOVIESData, GetAllNews
 } from "../../store/actions/action";
 import Carousal from "../Sliders/carousal";
-import SelectSearch from 'react-select-search'
+// import SelectSearch from 'react-select-search'
 const options = [
   {name: 'Swedish', value: 'sv'},
   {name: 'English', value: 'en'},
@@ -118,7 +118,7 @@ clear = () => {
 
         <br />
         <br />
-        <ReactSearchBox
+        {/* <ReactSearchBox
         placeholder="Placeholder"
         value=""
         data={[
@@ -152,9 +152,9 @@ clear = () => {
         onChange ={record => console.log('onChange' ,record)}
         onSelect ={record => console.log('onSelect', record)}
         
-      />
+      /> */}
 
-<SelectSearch options={options} value="sv" name="language" placeholder="Choose your language" />
+{/* <SelectSearch options={options} value="sv" name="language" placeholder="Choose your language" /> */}
       
 {/* <SelectSearch
                     name="font"
@@ -172,7 +172,7 @@ clear = () => {
                     options={countries}
                     placeholder="Your country"
                 /> */}
-                <SelectSearch
+                {/* <SelectSearch
                     name="friends"
                     multiple
                     value={this.state.friends_search}
@@ -180,7 +180,7 @@ clear = () => {
                     options={friends}
                     placeholder="Search friends"
                     renderOption={renderFriend}
-                />
+                /> */}
                 {/* <SelectSearch
                     name="colors"
                     multiple

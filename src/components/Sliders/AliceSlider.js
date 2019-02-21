@@ -153,7 +153,7 @@ class Gallery extends React.Component {
                margin:'5px'
               }}
             >
-             <img src="https://occhimagazine.com/occhi/wp-content/uploads/2018/07/AMTWPoster-1024x576.jpg" className="img-fluid w-100" />
+             <img src="https://occhimagazine.com/occhi/wp-content/uploads/2018/07/AMTWPoster-1024x576.jpg" className="img-fluid w-100" alt="contains movie poster" />
             </div>
             <div
               className="d-block"
@@ -163,7 +163,7 @@ class Gallery extends React.Component {
                 margin:'5px'
               }}
             >
-             <img src="https://www.syfy.com/sites/syfy/files/styles/1200x680/public/2018/04/avengers_infinity_war_hero_image.jpg" className="img-fluid w-100" />
+             <img src="https://www.syfy.com/sites/syfy/files/styles/1200x680/public/2018/04/avengers_infinity_war_hero_image.jpg" className="img-fluid w-100" alt="infinity war poster"/>
             </div>
             <div
               className="yours-custom-class"
@@ -173,7 +173,7 @@ class Gallery extends React.Component {
                 margin:'5px'
               }}
             >
-            <img src="https://www.thebeaverton.com/wp-content/uploads/2018/07/mission-impossible-fallout.jpg" className="img-fluid w-100" />
+            <img src="https://www.thebeaverton.com/wp-content/uploads/2018/07/mission-impossible-fallout.jpg" className="img-fluid w-100"  alt="mission impossible poster"/>
             </div>
             <div
               className="yours-custom-class"
@@ -183,7 +183,7 @@ class Gallery extends React.Component {
                 margin:'5px'
               }}
             >
-            <img src="https://www.metrolibrary.org/sites/default/files/ready-player-one-new-poster-1-1021x580.jpg" className="img-fluid w-100" />
+            <img src="https://www.metrolibrary.org/sites/default/files/ready-player-one-new-poster-1-1021x580.jpg" className="img-fluid w-100" alt="ready player one poster" />
             </div>
             <div
               className="yours-custom-class"
@@ -193,7 +193,7 @@ class Gallery extends React.Component {
                 margin:'5px'
               }}
             >
-             <img src="https://s4827.pcdn.co/wp-content/uploads/2019/01/bohemian-rhapsody-banner.jpg" className="img-fluid w-100" />
+             <img src="https://s4827.pcdn.co/wp-content/uploads/2019/01/bohemian-rhapsody-banner.jpg" className="img-fluid w-100"  alt="Bohemian rhaposdy  poster" />
             </div>
            
           </AliceCarousel>
