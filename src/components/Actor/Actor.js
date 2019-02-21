@@ -23,7 +23,9 @@ class Actor extends Component {
         this.props.AcrtorsData()
     }
   render() {
-    console.log(this.props)
+    var that = this
+
+    // console.log(that.props.location.searchData)
     // let ActorName=this.props.match.params.ActorName;
      ActorName = 'Bradpitt';
     console.log(this.props.ACTORS)
@@ -44,9 +46,11 @@ class Actor extends Component {
             console.log(ACTORS.Bradpitt)
             console.log('sf',ACTORS)
               // if(ACTORS['Bradpitt']!=undefined){
-              if(false){
+              if(that.props.location.searchData != undefined){
 // console.log(ACTORS.Bradpitt)
 // console.log(cont)
+console.log(that.props.location.searchData)
+var check = that.props.location.searchData
             return(
               <div className="container-fluid back">
               <div className="row">
@@ -57,7 +61,7 @@ class Actor extends Component {
               <div className="col-md-4 ">
                   <img
                     className="SideimageLeft  "
-                    src={ACTORS[ActorName].imageURL}
+                    src={check.imageURL}
                     alt="Card image cap"
                   />
               </div>
@@ -65,7 +69,7 @@ class Actor extends Component {
       
                 <div className="col-md-7 ">
                 {/* <div class='row'> */}
-                <h3 class='topText'>{ACTORS[ActorName].name}</h3><br/>
+                <h3 class='topText'>{check.name}</h3><br/>
                 {/* <button className='AddWatchBtn' >Add to watch List </button> */}
                   
                 {/* </div> */}
@@ -83,11 +87,11 @@ class Actor extends Component {
                   </div> */}
                   <div style={{
        marginLeft:'3%' , marginRight: '3%'}}>
-                      <h6 class='discription'>{ACTORS['BradPitt'].Bio}</h6>
+                      <h6 class='discription'>{check.Bio}</h6>
                       <ul class='discription' style={{listStyleType:'none'}}>
-        <li>Films : {ACTORS['BradPitt'].Films}</li>
-        <li>Birthday : {ACTORS['BradPitt'].DOB}</li>
-        <li>Height : {ACTORS['BradPitt'].height} feet</li>
+        <li>Films : {check.Films}</li>
+        <li>Birthday : {check.DOB}</li>
+        <li>Height : {check.height} feet</li>
       </ul>  
                   </div>
                     {/* <div className="card-block" style={{padding:'20px'}}>
