@@ -5,15 +5,25 @@ import Model from "./../components/Sliders/Model";
 import "./header.css";
 import { Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
-import { facebookSignout } from "../store/actions/action";
-
+// import { facebookSignout } from "../store/actions/action";
+import SelectSearch from 'react-select-search'
 import MobileLogo from "../media/fp_logo_small.png";
+import './searchBar.css'
+
+import {
+  facebookSignout , 
+  SearchData ,
+} from "../store/actions/action";
+var SEARCHDATANODE = [];
+var MYDATA = []
 class HeaderFirst extends Component {
   constructor(props) {
     super(props);
     this.state = {
       menuOpen: false
     };
+  
+    this.props.SearchData()
   }
 
   // This keeps your state in sync with the opening/closing of the menu
@@ -21,6 +31,7 @@ class HeaderFirst extends Component {
   handleStateChange(state) {
     this.setState({ menuOpen: state.isOpen });
   }
+
 
   // This can be used to close the menu, e.g. when a user clicks a menu item
   closeMenu() {
@@ -33,8 +44,28 @@ class HeaderFirst extends Component {
   toggleMenu() {
     this.setState({ menuOpen: !this.state.menuOpen });
   }
+  clear = () => {
+    this.setState({
+        font: '',
+        country: '',
+        friends: [],
+        colors: [] , 
+        SEARCHDATA : ''
+       
+    });
+  };
+  state = {
+    font: 'Playfair Display',
+    country: 'SE',
+    friends: [],
+    colors: ['red', 'purple'] , 
+    SEARCHDATA : 'DONE'
+
+};
   render() {
     var that = this
+    SEARCHDATANODE = this.props.SEARCHDATA
+     
     return (
       // main div start
       <div>
@@ -256,14 +287,43 @@ class HeaderFirst extends Component {
             <div className="col-6 offset-3">
               <div className="collapse" id="collapseExample">
               <div className="input-group " style={{padding:'20px'}}>
-                <input
+                {/* <input
                   type="text"
                   className="form-control"
                   placeholder="Search For Movie & Actors"
                   aria-label="Recipient's username"
                   aria-describedby="basic-addon2"
                  
-                />
+                /> */}
+                 {/* <SelectSearch
+                    name="country"
+                    mode="input"
+                    // value={this.state.country}
+                    // options={countries}
+                    placeholder="Search For Movie & Actors"
+                />  */}
+                  {
+                (function(){
+                  // do this right now
+                  console.log('comin')
+                  if(that.props.SEARCHDATA!=undefined){
+console.log(that.props.SEARCHDATA)
+// console.log(cont)
+                    return(
+  <SelectSearch
+                    name="Searching"
+                    mode="input"
+                    // value={that.state.SEARCHDATA}
+                    // options={that.props.SEARCHDATA}
+                    options={SEARCHDATANODE}
+                    placeholder="Search Actor and Films"
+                    // onChange={(val , val1 , val2)=>{console.log('val',val1),console.log('val1',val1),console.log('val2',val2)}}
+                /> 
+)
+                  }
+                  console.log("Look at me, I'm running");
+              })()
+              }
                 <div className="input-group-append">
                   <button className="btn SearchButtonStyling" type="button">
                     Search
@@ -286,6 +346,7 @@ function mapStateToProp(state) {
   return {
     userName: state.reducer.name,
     CurrentUser: state.reducer.currentUser
+ ,SEARCHDATA: state.reducer.SEARCHDATA
   };
 }
 function mapDispatchToProp(dispatch) {
@@ -301,6 +362,9 @@ function mapDispatchToProp(dispatch) {
     // }
     PerformLogout: () => {
       dispatch(facebookSignout());
+    } , 
+    SearchData:()=>{
+      dispatch(SearchData());
     }
   };
 }
