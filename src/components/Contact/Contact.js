@@ -16,7 +16,7 @@ const Contact = () => {
       
     <div style={{marginLeft:'7%' , marginBottom:'4%'}}>
       
-    <h2 style={{borderLeft: '8px solid rgb(255, 141, 27)', padding: '12px', marginLeft: '10px'}}> Contact Us</h2>
+    <h2 style={{borderLeft: '8px solid rgb(255, 141, 27)', padding: '12px', marginLeft: '10px' ,     marginTop:' 4%'}}> Contact Us</h2>
     </div>
     <div className="container">
     <div>

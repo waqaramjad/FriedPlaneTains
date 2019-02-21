@@ -33,7 +33,11 @@ var actors = this.props.Actors
     return (
 
 <div class="container">
+      <h2 style={{borderLeft: '8px solid rgb(255, 141, 27)', padding: '12px', marginLeft: '10px' ,     marginTop:' 4%'}}> Actors</h2>
       <div className="row">
+
+
+
       {
                   
               

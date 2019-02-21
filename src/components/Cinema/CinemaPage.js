@@ -28,7 +28,10 @@ class CinemaPage extends Component {
       let TrailerSource="https://www.youtube.com/embed/mP0VHJYFOAU"
     return (
       <div id="chains" style={{textAlign: 'center', display: 'block'}} className=" fpcontainer container ">
-        <h1> Choose a cinema chain</h1><h1>
+        {/* <h1> Choose a cinema chain</h1> */}
+        <h2 style={{borderLeft: '8px solid rgb(255, 141, 27)',   marginLeft: '10px' ,     marginTop:' 4%'}}> Cinema List</h2>
+
+        <h1>
           <section id>
           <Link to={"/Cinema/enesis" }style={{color:'black',textDecoration:'none'}}>        <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/genesis_logo.png)'}} className="chainbutton image" href="/home" id={1}  /> </Link>
           <Link to={"/Cinema/cinemas" }style={{color:'black',textDecoration:'none'}}>    <button style={{outline: 'none', background: 'url(https://s3-eu-west-1.amazonaws.com/fp-img/img/CinemaLogo/silverbird_logo.png)'}} className="chainbutton image" href="#" id={2} onclick="showcinema(this.id)" /></Link>

@@ -49,11 +49,13 @@ var CinemaTag=this.props.match.params.CinemaName;
       let TrailerSource="https://www.youtube.com/embed/mP0VHJYFOAU"
     return (
       <div id="chains" style={{textAlign: 'center', display: 'block'}} className=" fpcontainer container ">
-        <h1> Choose a cinema chain</h1><h1>
-        </h1>
+        {/* <h1> Choose a cinema chain</h1><h1>
+        </h1> */}
         <div className="container ">
-        <h2>Bordered Table</h2>
-        <p>The .table-bordered class adds borders to a table:</p>    
+        <h2 style={{borderLeft: '8px solid rgb(255, 141, 27)', padding: '12px', marginLeft: '10px' ,     marginTop:' 4%'}}> {CinemaTag}</h2>
+
+        {/* <h2>Bordered Table</h2> */}
+        {/* <p>The .table-bordered class adds borders to a table:</p>     */}
         <div className = "row">
 
 <div className="col-sm-12 col-md-12 col-xs-12 col-lg-12">
