@@ -46,26 +46,35 @@ class HeaderFirst extends Component {
           <Link to="/" className="menuItem" onClick={() => this.closeMenu()}>
             Home
           </Link>
-          <Link
+          {/* <Link
             to="/"
             className="menuItem"
             onClick={() => this.closeMenu()}
           >
             Countries
-          </Link>
-          <Link
-            to="/contact"
-            className="menuItem"
-            onClick={() => this.closeMenu()}
-          >
-            Contact
-          </Link>
+          </Link> */}
+        
           <Link
             to="/Actors"
             className="menuItem"
             onClick={() => this.closeMenu()}
           >
             Actors
+          </Link>
+         
+          <Link
+ to="/Movies"       
+ className="menuItem"
+            onClick={() => this.closeMenu()}
+          >
+            Movies
+          </Link>
+          <Link
+ to="/Cinema"       
+      className="menuItem"
+            onClick={() => this.closeMenu()}
+          >
+            Cinema
           </Link>
           <Link
             to="/news"
@@ -74,9 +83,15 @@ class HeaderFirst extends Component {
           >
             News
           </Link>
-
-          
           <Link
+            to="/contact"
+            className="menuItem"
+            onClick={() => this.closeMenu()}
+          >
+            Contact
+          </Link>
+          
+          {/* <Link
             className=" dropdown-toggle menuItem"
             data-toggle="dropdown"
             to="/Movies"
@@ -102,7 +117,7 @@ class HeaderFirst extends Component {
             </Link>
          
           </div>
-          </Link>
+          </Link> */}
          
         </Menu>
         {/* <CustomIcon /> */}

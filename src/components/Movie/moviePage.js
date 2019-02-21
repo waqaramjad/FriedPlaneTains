@@ -4,6 +4,8 @@ import './movieStyle.css'
 const MoviesPage = () => {
   return (
 <div class="container">
+<h2 style={{borderLeft: '8px solid rgb(255, 141, 27)', padding: '12px', marginLeft: '10px' ,     marginTop:' 4%'}}> Movies</h2>
+
       <div className="row">
         <div className="col-lg-3 col-md-3 col-6 ">
         <Link to="/detail/Antman" style={{color:'black',textDecoration:'none'}}> 
