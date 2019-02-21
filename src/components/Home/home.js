@@ -10,7 +10,7 @@ import './style.css';
 import {
   changeName,
   GoogleSignin,
-  facebookSignin , MOVIESData, GetAllNews
+  facebookSignin , MOVIESData, GetAllNews , AcrtorsData
 } from "../../store/actions/action";
 import Carousal from "../Sliders/carousal";
 // import SelectSearch from 'react-select-search'
@@ -66,7 +66,7 @@ class Home extends Component {
     super(props);
     this.props.MOVIESData()
     
-
+    // this.props.AcrtorsData()
   }
    componentDidMount() {
     this.props.GetAllNewsFromFirebase();
@@ -286,6 +286,9 @@ function mapDispatchToProp(dispatch) {
       dispatch(facebookSignin());
     },GetAllNewsFromFirebase: () => {
       dispatch(GetAllNews());
+    }  , 
+    AcrtorsData: () => {
+      dispatch(AcrtorsData());
     }
   };
 }
