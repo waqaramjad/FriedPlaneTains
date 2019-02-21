@@ -79,75 +79,99 @@ var movie = MovieNames
 // console.log('user.uid' , user.uid)
 
     }
-  render() {
-    console.log(this.props)
-       MovieNames=this.props.match.params.moviename;
-      console.log(MovieNames)
-      // let TrailerSource="https://www.youtube.com/embed/"+Movies[MovieNames].TrailerUrl;
-      let TrailerSource="https://www.youtube.com/embed/mP0VHJYFOAU"
-    return (
-      <div className="container-fluid back">
-        <div className="row">
-          <br/>
-        </div>
-        <div className="row">
-
-        <div className="col-md-4 ">
-            <img
-              className="SideimageLeft  "
-              src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/other/ant_man_ver5.jpg"
-              alt="Card image cap"
-            />
-        </div>
-
-
-          <div className="col-md-7 ">
-          {/* <div class='row'> */}
-          <h3 class='topText'>Ant Man</h3><br/>
-          <button className='AddWatchBtn' onClick={()=>{this.addPlayList()}} >Add to watch List </button>
-            
-          {/* </div> */}
-            <div className="card card-inverse card-primary VideoSection" style={{marginTop:'15px'}}>
-            <div className="videoWrapper" style={{margin:'5%'}}>
-              <iframe
-                width="560"
-                height="315"
-                src={TrailerSource}
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen 
-                
-                />
-            </div>
-            <div style={{
- marginLeft:'3%' , marginRight: '3%'}}>
-                <h6 class='discription'>ohemian Rhapsody is a foot-stomping celebration of Queen, their music and their extraordinary lead singer Freddie Mercury. Freddie defied stereotypes and shattered convention to become one of the most beloved entertainers on the planet. The film traces the meteoric rise of the band through their iconic songs and revolutionary sound. They reach unparalleled success, but in an unexpected turn Freddie, surrounded by darker influences, shuns Queen in pursuit of his solo career. Having suffered greatly without the collaboration of Queen, Freddie manages to reunite with his bandmates just in time for Live Aid. While bravely facing a recent AIDS diagnosis, Freddie leads the band in one of the greatest performances in the history of rock music. Queen cements a legacy that continues to inspire outsiders, dreamers and music lovers to this day</h6>
-            </div>
-              <div className="card-block" style={{padding:'20px'}}>
-                <h5 className="card-title "> Comments </h5>
-
-                <div className="form-group">
-                  <textarea
-                    className="form-control"
-                    id="exampleFormControlTextarea1"
-                    placeholder="Type ypur message here..."
-                    rows="3"
-                  />
+    render() {
+      return (
+        <div className="container-fluid">
+          {this.state.MOVIES ? (
+            <div>
+              <div className="row">
+                <div
+                  className="col-md-11 offset-md-1"
+                  style={{ marginTop: "15px" }}
+                >
+                  <h3>{this.state.MOVIES[this.state.MovieNames].Title}</h3>
                 </div>
-                <button type="submit" class="btn btn-warning submit">
-                  Submit
-                </button>
+              </div>
+              <div className="row">
+                <div className="col-md-7 offset-md-1">
+                  <div
+                    className="card card-inverse card-primary "
+                    style={{ marginTop: "15px" }}
+                  >
+                    <div className="videoWrapper" style={{ margin: "5%" }}>
+                      <iframe
+                        width="560"
+                        height="315"
+                        src={
+                          "https://www.youtube.com/embed/" +
+                          this.state.MOVIES[this.state.MovieNames].TrailerUrl
+                        }
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                    <div
+                      style={{
+                        marginLeft: "3%",
+                        marginRight: "3%"
+                      }}
+                    >
+                      <h6>
+                        {this.state.MOVIES[this.state.MovieNames].discription}
+                      </h6>
+                    </div>
+                    {this.props.CurrentUser ? (
+                      <div className="card-block" style={{ padding: "20px" }}>
+                        <h5 className="card-title "> Comments </h5>
+  
+                        <div class="form-group">
+                          <textarea
+                            className="form-control"
+                            id="exampleFormControlTextarea1"
+                            placeholder="Type ypur Comment here..."
+                            rows="3"
+                            value={this.state.commentText} onChange={this.PerformComment}
+                          />
+                        </div>
+                        <button type="submit" class="btn btn-warning" onClick={this.SaveComment}>
+                          Submit
+                        </button>
+                      </div>
+                    ) : (
+                      <h4 style={{ margin: "10px" }}>
+                        you need to be logged in inorder to comment...
+                      </h4>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-12 col-md-7 offset-md-1">
+                      {this.props.Comments?this.props.Comments.map(x => {
+                        return (
+                          <Comment Name={x.userWhoPerformedTheComment} frontImg={x.pictureOfTheUser}  
+                          Comments={x.Comment}
+                          />
+                        );
+                      }
+                      )
+                      :null}
+              </div>
               </div>
             </div>
-
-          </div>
+          ) : (
+            <div className="row">
+              <div className="col-11 offset-1" style={{ margin: "20px" }}>
+                <h2>
+                  Oh.. there seemed to be a problem ...please go back to home page
+                </h2>
+              </div>
+            </div>
+          )}
         </div>
-        <div className="row">
-        
-        </div>
-      </div>
-    );
-  }
+      );
+    }
 }
 
 function mapStateToProp(state) {
