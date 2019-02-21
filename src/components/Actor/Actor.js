@@ -4,13 +4,15 @@ import { connect } from "react-redux";
 import {
   changeName,
   GoogleSignin,
-  facebookSignin
+  facebookSignin , 
+  AcrtorsData
+
 
 } from "../../store/actions/action";
 import './SingleMovieStyle.css'
 var ACTORS = undefined ; 
 
-
+var ActorName
 class Actor extends Component {
     constructor(props){
         super(props);
@@ -18,13 +20,16 @@ class Actor extends Component {
         this.state={
          
         }
+        this.props.AcrtorsData()
     }
   render() {
     console.log(this.props)
-    let ActorName=this.props.match.params.ActorName;
+    // let ActorName=this.props.match.params.ActorName;
+     ActorName = 'Bradpitt';
     console.log(this.props.ACTORS)
       console.log('MovieNames' , ActorName)
-      // let TrailerSource="https://www.youtube.com/embed/"+Movies[MovieNames].TrailerUrl;
+      ACTORS = this.props.ACTORS
+      // let TrailerSou rce="https://www.youtube.com/embed/"+Movies[MovieNames].TrailerUrl;
       let TrailerSource="https://www.youtube.com/embed/mP0VHJYFOAU"
     return (
 <div>
@@ -33,8 +38,14 @@ class Actor extends Component {
           // do this right now
           console.log('comin')
           if(ACTORS!=undefined){
-console.log(ACTORS)
-console.log(ACTORS[ActorName])
+            console.log(ACTORS)
+            console.log(ActorName)
+            console.log(ACTORS[ActorName])
+            console.log(ACTORS.Bradpitt)
+            console.log('sf',ACTORS)
+              // if(ACTORS['Bradpitt']!=undefined){
+              if(false){
+// console.log(ACTORS.Bradpitt)
 // console.log(cont)
             return(
               <div className="container-fluid back">
@@ -72,11 +83,11 @@ console.log(ACTORS[ActorName])
                   </div> */}
                   <div style={{
        marginLeft:'3%' , marginRight: '3%'}}>
-                      <h6 class='discription'>{ACTORS[ActorName].Bio}</h6>
+                      <h6 class='discription'>{ACTORS['BradPitt'].Bio}</h6>
                       <ul class='discription' style={{listStyleType:'none'}}>
-        <li>Films : {ACTORS[ActorName].Films}</li>
-        <li>Birthday : {ACTORS[ActorName].DOB}</li>
-        <li>Height : {ACTORS[ActorName].height} feet</li>
+        <li>Films : {ACTORS['BradPitt'].Films}</li>
+        <li>Birthday : {ACTORS['BradPitt'].DOB}</li>
+        <li>Height : {ACTORS['BradPitt'].height} feet</li>
       </ul>  
                   </div>
                     {/* <div className="card-block" style={{padding:'20px'}}>
@@ -104,6 +115,7 @@ console.log(ACTORS[ActorName])
             </div>
 )
           }
+        }
           console.log("Look at me, I'm running");
       })()
       }
@@ -131,6 +143,9 @@ function mapDispatchToProp(dispatch) {
     PerformFBSignIn: () => {
       dispatch(facebookSignin());
     } , 
+    AcrtorsData: () => {
+      dispatch(AcrtorsData());
+    }
   };
 }
 

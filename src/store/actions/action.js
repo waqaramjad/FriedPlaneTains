@@ -143,15 +143,15 @@ export function AcrtorsData() {
               let Actors = data.val();
               var check = data.val()
 
-              Object.keys(check).map((data, index) => {
+//               Object.keys(check).map((data, index) => {
 
-               var singleObject = check[data]
-               arr.push(singleObject)
+//                var singleObject = check[data]
+//                arr.push(singleObject)
 
 
 
-              })
-console.log(arr)
+//               })
+// console.log(arr)
               dispatch({ type: 'ACTORS', payload: Actors })
 
 
