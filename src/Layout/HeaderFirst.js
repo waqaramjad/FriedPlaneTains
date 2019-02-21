@@ -9,6 +9,7 @@ import { slide as Menu } from "react-burger-menu";
 import SelectSearch from 'react-select-search'
 import MobileLogo from "../media/fp_logo_small.png";
 import './searchBar.css'
+import history from '../History';
 
 import {
   facebookSignout , 
@@ -319,7 +320,7 @@ console.log(that.props.SEARCHDATA)
                     // options={that.props.SEARCHDATA}
                     options={SEARCHDATANODE}
                     placeholder="Search Actor and Films"
-                    // onChange={(val , val1 , val2)=>{console.log('val',val1),console.log('val1',val1),console.log('val2',val2)}}
+                    onChange={(val , val1 , val2)=>{history.push('/Actor/'+val.value)}}
                 /> 
 )
                   }
