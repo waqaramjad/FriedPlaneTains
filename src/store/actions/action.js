@@ -103,7 +103,7 @@ export function MOVIESData(daa) {
 export function SearchData() {
   return dispatch => {
       console.log('getStudentDataByCompany')
-
+      var arr = []
       firebase.database().ref('Actors/').once('value')
       .then((data) => {
 
@@ -111,7 +111,7 @@ export function SearchData() {
               console.log(data.val())
               let Actors = data.val();
               var check = data.val()
-var arr = []
+
               Object.keys(check).map((data, index) => {
 
                var singleObject = check[data]
@@ -120,13 +120,39 @@ var arr = []
 
               })
               console.log(arr)
-                            dispatch({ type: 'SEARCHDATA', payload: arr })
+                        
               
+              firebase.database().ref('Movies/').once('value')
+              .then((data) => {
+        
+                      console.log('Movies')
+                      console.log(data.val())
+                      let Actors = data.val();
+                      var check = data.val()
+        
+                      Object.keys(check).map((data, index) => {
+        
+                       var singleObject = check[data]
+                       arr.push(singleObject)
+        
+        
+                      })
+                      console.log(arr)
+                                    dispatch({ type: 'SEARCHDATA', payload: arr })
+                      
+                      
+                      
+                      
+                      
+                                })
               
               
               
               
                         })
+
+
+                                          // dispatch({ type: 'SEARCHDATA', payload: arr })
                 }
               }
 export function AcrtorsData() {
