@@ -1,0 +1,37 @@
+.back { 
+    background-color: black
+}
+
+.VideoSection {
+    background-color: black
+    
+}
+
+.discription {
+    color: white
+}
+.sideImage {
+    margin-top: 19%
+}
+
+.topText {
+    margin-left: 5%; 
+    color: white
+
+}
+
+.SideimageLeft {
+    min-height: 342px;
+    max-height: 60%;
+    height: 100%;
+    width: 100%;
+}
+
+.AddWatchBtn {
+    margin-left: 5%
+}
+
+.submit {
+margin-bottom: 15%
+
+}
