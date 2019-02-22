@@ -58,11 +58,11 @@ class SearchMovie extends Component {
       // var MovieNames = this.props.match.params.moviename;
       //  var TrailerSource =
       //  "https://www.youtube.com/embed/" + this.props.MOVIES[MovieNames].TrailerUrl;
-     this.props.GetAllComments(this.props.match.params.moviename);
+     this.props.GetAllComments(movieValue);
      
       this.setState({
         MOVIES: this.props.MOVIES,
-        MovieNames: this.props.match.params.moviename,
+        MovieNames: movieValue,
        
       });
     }
@@ -81,7 +81,9 @@ console.log(movieValue)
 
     }
     render() {
-
+      // var movie =  this.props.match.params.moviename
+      // this.props.ProfileSaveFilmList(movie)
+console.log(this.props)
         var movieData = this.props.location.searchData
         movieValue = movieData.name
       return (
