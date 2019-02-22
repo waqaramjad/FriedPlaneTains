@@ -4,7 +4,9 @@ const initial = {
   News: "",
   News: "",
   MOVIES:"",
-  latestComment:''
+  latestComment:'', 
+  
+  NewsLatestComment:''
 };
 
 const reducer = (state = initial, action) => {
@@ -41,6 +43,10 @@ const reducer = (state = initial, action) => {
       return {...state,latestComment:newComments}
       case "Empty_comments":
       return {...state,latestComment:action.payload}
+      case  'Latest_Comment_News':
+      let newCommentsNews=''
+      newCommentsNews=action.payload;
+      return {...state,NewsLatestComment:newCommentsNews}
     default:
       return state;
   }

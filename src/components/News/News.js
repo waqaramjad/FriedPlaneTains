@@ -29,7 +29,7 @@ class Home extends Component {
               className="btn btn-primary"
               data-toggle="button"
               aria-pressed="false"
-              autocomplete="off"
+              autoComplete="off"
               onClick={()=>{
             
                 this.setState({Hollywood:true,Nollywood:true});
@@ -42,7 +42,7 @@ class Home extends Component {
               className="btn btn-info"
               data-toggle="button"
               aria-pressed="false"
-              autocomplete="off"
+              autoComplete="off"
               onClick={()=>{
                
                 this.setState({Hollywood:true,Nollywood:false});
@@ -55,7 +55,7 @@ class Home extends Component {
               className="btn btn-dark"
               data-toggle="button"
               aria-pressed="false"
-              autocomplete="off"
+              autoComplete="off"
               onClick={()=>{
             
                 this.setState({Hollywood:false,Nollywood:true});

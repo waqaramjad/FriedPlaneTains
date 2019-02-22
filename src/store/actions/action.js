@@ -209,6 +209,41 @@ export function AcrtorsData() {
 //   }
 // }
 
+export function CommentOnNews(data) {
+  return dispatch => {
+      console.log('commenting on news ')
+
+
+       firebase.database().ref('News/'+data.Key).push(data)
+      .then((value) => {
+          console.log(value);
+
+           GetCommentsofNews(data.Key)
+          })
+  }
+}
+
+ export function GetCommentsofNews(data){
+  let arrayofComments=[];
+  return dispatch => {
+    console.log('runnning to fetch news comment ')
+
+     firebase.database().ref('News/'+data+'/').on('value', snapshot => {
+
+       snapshot.forEach(obj=>{
+        // console.log(obj.val())
+        if(isObject(obj.val())){
+          console.log(obj.val());
+          arrayofComments.push( obj.val());
+        }
+      })
+      console.log('array of comments before',arrayofComments);
+      dispatch({ type: 'Latest_Comment_News', payload: arrayofComments })
+      arrayofComments=[];
+      console.log('array of comments after',arrayofComments);
+    })
+}
+}
 
 export function CinemaData(CinemaTag) {
   return dispatch => {
@@ -414,12 +449,15 @@ export function GetAllNews() {
                   // arr.push(snapshot.val());
                   console.log('getallmsg');
                   snapshot.forEach(obj=>{
-                    arrayofNews.push( obj.val());
+                    let tempObj=obj.val();
+                    tempObj.Key=obj.key;
+                    arrayofNews.push(tempObj);
                   })
                   console.log(arrayofNews);
                   dispatch({ type: "GET_NEWS", payload: arrayofNews });
+                  arrayofNews=[];
                 });
-                console.log(arrayofNews);
+                
 
   }
 }
