@@ -15,6 +15,7 @@ import './SingleMovieStyle.css'
 import firebase from 'firebase'
 var Movies ; 
 var MovieNames
+var movieValue 
 
 class SearchMovie extends Component {
     constructor(props){
@@ -71,15 +72,18 @@ class SearchMovie extends Component {
 
 
     addPlayList(){
-console.log(MovieNames)
-var movie =  this.props.match.params.moviename
-      this.props.ProfileSaveFilmList(movie)
+console.log(movieValue)
+// var movie =  this.props.match.params.moviename
+      this.props.ProfileSaveFilmList(movieValue)
 // var user = firebase.auth().currentUser
 // console.log('user' , user)
 // console.log('user.uid' , user.uid)
 
     }
     render() {
+
+        var movieData = this.props.location.searchData
+        movieValue = movieData.name
       return (
         <div className="container-fluid back">
           {this.state.MOVIES ? (
@@ -89,7 +93,7 @@ var movie =  this.props.match.params.moviename
                   className="col-md-11 offset-md-1"
                   style={{ marginTop: "15px" }}
                 >
-                  <h3 className='topText'>{this.state.MOVIES[this.state.MovieNames].Title}</h3>
+                  <h3 className='topText'>{movieData.Title}</h3>
                   <button className='AddWatchBtn' onClick={()=>{this.addPlayList()}} >Add to watch List </button>
                 </div>
               </div>
@@ -105,7 +109,7 @@ var movie =  this.props.match.params.moviename
                         height="315"
                         src={
                           "https://www.youtube.com/embed/" +
-                          this.state.MOVIES[this.state.MovieNames].TrailerUrl
+                          movieData.TrailerUrl
                         }
                         frameBorder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -117,7 +121,7 @@ var movie =  this.props.match.params.moviename
                         marginLeft:'3%' , marginRight: '3%'}}
                     >
                       <h6 className='discription'>
-                        {this.state.MOVIES[this.state.MovieNames].discription}
+                        {movieData.discription}
                       </h6>
                     </div>
                     {this.props.CurrentUser ? (

@@ -321,7 +321,11 @@ console.log(that.props.SEARCHDATA)
                     options={SEARCHDATANODE}
                     placeholder="Search Actor and Films"
                     // onChange={(val , val1 , val2)=>{history.push('/Actor/'+val.value)}}
-                    onChange={(val , val1 , val2)=>{ console.log(val);  if(val.Bio!=undefined)history.push({pathname :'/Search', searchData : val})}}
+                    onChange={(val , val1 , val2)=>{ console.log(val);  if(val.Bio!=undefined){history.push({pathname :'/Search', searchData : val})}
+                  else{
+                    history.push({pathname :'/SearchMovie', searchData : val})
+                  }
+                  }}
                     // onChange={(val , val1 , val2)=>{ console.log(val) ;console.log(val1) ;console.log(val2)   }}
                 /> 
 )
