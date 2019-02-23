@@ -5,7 +5,7 @@ import MoviesList from "../Movie/MovieList";
 import Gallery from "../Sliders/AliceSlider";
 import MovieNews from '../News/NewsItem';
 // import ReactSearchBox from 'react-search-box'
-import { countries, fontStacks, friends, colors } from './data';
+// import { countries, fontStacks, friends, colors } from './data';
 import './style.css';
 import {
   changeName,
@@ -71,44 +71,44 @@ class Home extends Component {
    componentDidMount() {
     this.props.GetAllNewsFromFirebase();
   }
-  state = {
-    font: 'Playfair Display',
-    country: 'SE',
-    friends: [],
-    colors: ['red', 'purple']
-};
+//   state = {
+//     font: 'Playfair Display',
+//     country: 'SE',
+//     friends: [],
+//     colors: ['red', 'purple']
+// };
 
-clear = () => {
-  this.setState({
-      font: '',
-      country: '',
-      friends: [],
-      colors: []
-  });
-};
+// clear = () => {
+//   this.setState({
+//       font: '',
+//       country: '',
+//       friends: [],
+//       colors: []
+//   });
+// };
 
-  ata = [
-    {
-      key: 'john',
-      value: 'John Doe',
-    },
-    {
-      key: 'jane',
-      value: 'Jane Doe',
-    },
-    {
-      key: 'mary',
-      value: 'Mary Phillips',
-    },
-    {
-      key: 'robert',
-      value: 'Robert',
-    },
-    {
-      key: 'karius',
-      value: 'Karius',
-    },
-  ]
+//   ata = [
+//     {
+//       key: 'john',
+//       value: 'John Doe',
+//     },
+//     {
+//       key: 'jane',
+//       value: 'Jane Doe',
+//     },
+//     {
+//       key: 'mary',
+//       value: 'Mary Phillips',
+//     },
+//     {
+//       key: 'robert',
+//       value: 'Robert',
+//     },
+//     {
+//       key: 'karius',
+//       value: 'Karius',
+//     },
+//   ]
 
   
   render() {
