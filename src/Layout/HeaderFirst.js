@@ -27,21 +27,15 @@ class HeaderFirst extends Component {
     this.props.SearchData()
   }
 
-  // This keeps your state in sync with the opening/closing of the menu
-  // via the default means, e.g. clicking the X, pressing the ESC key etc.
   handleStateChange(state) {
     this.setState({ menuOpen: state.isOpen });
   }
 
 
-  // This can be used to close the menu, e.g. when a user clicks a menu item
   closeMenu() {
     this.setState({ menuOpen: false });
   }
 
-  // This can be used to toggle the menu, e.g. when using a custom icon
-  // Tip: You probably want to hide either/both default icons if using a custom icon
-  // See https://github.com/negomi/react-burger-menu#custom-icons
   toggleMenu() {
     this.setState({ menuOpen: !this.state.menuOpen });
   }
@@ -79,13 +73,6 @@ class HeaderFirst extends Component {
             Home
           </Link>
           
-          {/* <Link
-            to="/"
-            className="menuItem"
-            onClick={() => this.closeMenu()}
-          >
-            Countries
-          </Link> */}
         
           <Link
             to="/Actors"
@@ -124,33 +111,6 @@ class HeaderFirst extends Component {
             Contact
           </Link>
           
-          {/* <Link
-            className=" dropdown-toggle menuItem"
-            data-toggle="dropdown"
-            to="/Movies"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Movies
-            <div className="dropdown-menu">
-            <Link
-              className="dropdown-item"
-              to="/Movies"
-              onClick={() => that.closeMenu()}
-            >
-              Movies
-            </Link>
-            <Link
-              className="dropdown-item"
-              to="/Cinema"
-              onClick={() => that.closeMenu()}
-            >
-              Cinema
-            </Link>
-         
-          </div>
-          </Link> */}
          
         </Menu>
         {/* <CustomIcon /> */}
@@ -290,21 +250,6 @@ class HeaderFirst extends Component {
             <div className="col-6 offset-3">
               <div className="collapse" id="collapseExample">
               <div className="input-group " style={{padding:'20px'}}>
-                {/* <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Search For Movie & Actors"
-                  aria-label="Recipient's username"
-                  aria-describedby="basic-addon2"
-                 
-                /> */}
-                 {/* <SelectSearch
-                    name="country"
-                    mode="input"
-                    // value={this.state.country}
-                    // options={countries}
-                    placeholder="Search For Movie & Actors"
-                />  */}
                 {
                 (function(){
                   // do this right now
@@ -361,15 +306,6 @@ function mapStateToProp(state) {
 }
 function mapDispatchToProp(dispatch) {
   return {
-    // changeUserName: () => {
-    //   dispatch(changeName());
-    // },
-    // PerformGoogleSignIn: () => {
-    //   dispatch(GoogleSignin());
-    // },
-    // PerformFBSignIn: () => {
-    //   dispatch(facebookSignin());
-    // }
     PerformLogout: () => {
       dispatch(facebookSignout());
     } , 
