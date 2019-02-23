@@ -35,7 +35,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link footerNavLink " href="#">
+                <a className="nav-link footerNavLink " href="/TOS">
                   Terms Of Use
                 </a>
               </li>
