@@ -11,6 +11,7 @@ import {
   MOVIESData,CommentOnMovie,GetCommentsofMovie
 
 } from "../../store/actions/action";
+import ScrollUp from '../ScrollUp/scroll';
 import './SingleMovieStyle.css'
 import firebase from 'firebase'
 var Movies ; 
@@ -85,6 +86,7 @@ var movie =  this.props.match.params.moviename
           {this.state.MOVIES ? (
             <div>
               <div className="row">
+              <ScrollUp />
                 <div
                   className="col-md-11 offset-md-1"
                   style={{ marginTop: "15px" }}
