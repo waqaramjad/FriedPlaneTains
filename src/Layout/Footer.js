@@ -15,12 +15,12 @@ const Footer = () => {
           <div className="col-md-12">
             <ul className="nav justify-content-center">
               <li className="nav-item">
-                <a className="nav-link  footerNavLink" href="#">
+                <a className="nav-link  footerNavLink" href="/Cinema">
                   Showtimes
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link footerNavLink" href="#">
+                <a className="nav-link footerNavLink" href="/News">
                   News 
                 </a>
               </li>
