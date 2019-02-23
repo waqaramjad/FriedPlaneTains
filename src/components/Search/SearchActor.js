@@ -119,6 +119,15 @@ var check = that.props.location.searchData
             </div>
 )
           }
+          else{
+            return( <div className="row">
+            <div className="col-11 offset-1" style={{ margin: "20px" }}>
+              <h2 style={{color:'black'}}>
+                Oh.. there seemed to be a problem ...please go back to home page
+              </h2>
+            </div>
+          </div>)
+          }
         }
           console.log("Look at me, I'm running");
       })()

@@ -16,14 +16,15 @@ import firebase from 'firebase'
 var Movies ; 
 var MovieNames
 var movieValue 
+var movieNameForComments
 
 class SearchMovie extends Component {
     constructor(props){
         super(props);
         Movies = this.props.MOVIES
         this.state={
-          MOVIES: "",
-      MovieNames: "",
+          MOVIES: '',
+      MovieNames: '',
       commentText:'',
         }
         this.addPlayList = this.addPlayList.bind(this)
@@ -58,11 +59,18 @@ class SearchMovie extends Component {
       // var MovieNames = this.props.match.params.moviename;
       //  var TrailerSource =
       //  "https://www.youtube.com/embed/" + this.props.MOVIES[MovieNames].TrailerUrl;
-     this.props.GetAllComments(movieValue);
+      console.log(movieNameForComments)
+      // var a = movieNameForComments.replace('"','')
+      // console.log(a)
+      // var StringComments = String(movieNameForComments)
+      // var StringComments = "Antman"
+      // console.log(StringComments)
+      // var 
+     this.props.GetAllComments(movieNameForComments);
      
       this.setState({
         MOVIES: this.props.MOVIES,
-        MovieNames: movieValue,
+        MovieNames: movieNameForComments,
        
       });
     }
@@ -84,8 +92,12 @@ console.log(movieValue)
       // var movie =  this.props.match.params.moviename
       // this.props.ProfileSaveFilmList(movie)
 console.log(this.props)
-        var movieData = this.props.location.searchData
+if(this.props.location.searchData!=undefined){
+  var movieData = this.props.location.searchData
+        movieNameForComments = movieData.value
         movieValue = movieData.name
+}
+      
       return (
         <div className="container-fluid back">
           {this.state.MOVIES ? (
@@ -165,15 +177,17 @@ console.log(this.props)
               </div>
               </div>
             </div>
-          ) : (
+          ) : 
+          (
             <div className="row">
               <div className="col-11 offset-1" style={{ margin: "20px" }}>
-                <h2>
+                <h2 style={{color:'white'}}>
                   Oh.. there seemed to be a problem ...please go back to home page
                 </h2>
               </div>
             </div>
-          )}
+          )
+          }
         </div>
       );
     }
