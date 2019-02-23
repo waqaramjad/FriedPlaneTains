@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import MoviesList from "../Movie/MovieList";
 import Gallery from "../Sliders/AliceSlider";
 import MovieNews from '../News/NewsItem';
-// import ReactSearchBox from 'react-search-box'
-// import { countries, fontStacks, friends, colors } from './data';
 import './style.css';
 import {
   changeName,
@@ -71,44 +69,6 @@ class Home extends Component {
    componentDidMount() {
     this.props.GetAllNewsFromFirebase();
   }
-//   state = {
-//     font: 'Playfair Display',
-//     country: 'SE',
-//     friends: [],
-//     colors: ['red', 'purple']
-// };
-
-// clear = () => {
-//   this.setState({
-//       font: '',
-//       country: '',
-//       friends: [],
-//       colors: []
-//   });
-// };
-
-//   ata = [
-//     {
-//       key: 'john',
-//       value: 'John Doe',
-//     },
-//     {
-//       key: 'jane',
-//       value: 'Jane Doe',
-//     },
-//     {
-//       key: 'mary',
-//       value: 'Mary Phillips',
-//     },
-//     {
-//       key: 'robert',
-//       value: 'Robert',
-//     },
-//     {
-//       key: 'karius',
-//       value: 'Karius',
-//     },
-//   ]
 
   
   render() {
@@ -118,78 +78,6 @@ class Home extends Component {
 
         <br />
         <br />
-        {/* <ReactSearchBox
-        placeholder="Placeholder"
-        value=""
-        data={[
-            {
-            key1: 'john',
-            value: 'John Doe',
-            discription :{
-              key: 'john',
-              value: 'John Doe',
-
-            }
-          },
-          {
-            
-            value: 'Jane Doe 2',
-          },
-          {
-            key: 'mary',
-            value: 'Mary Phillips',
-          },
-          {
-            key: 'robert',
-            value: 'Robert',
-          },
-          {
-            key: 'karius',
-            value: 'Karius',
-          },
-        ]}
-        callback={record => console.log('callback',record)}
-        onChange ={record => console.log('onChange' ,record)}
-        onSelect ={record => console.log('onSelect', record)}
-        
-      /> */}
-
-{/* <SelectSearch options={options} value="sv" name="language" placeholder="Choose your language" /> */}
-      
-{/* <SelectSearch
-                    name="font"
-                    value={this.state.font}
-                    renderOption={renderFontOption}
-                    search={false}
-                    renderValue={renderFontValue}
-                    options={fontStacks}
-                    placeholder="Choose font"
-                />
-                <SelectSearch
-                    name="country"
-                    mode="input"
-                    value={this.state.country}
-                    options={countries}
-                    placeholder="Your country"
-                /> */}
-                {/* <SelectSearch
-                    name="friends"
-                    multiple
-                    value={this.state.friends_search}
-                    height={172}
-                    options={friends}
-                    placeholder="Search friends"
-                    renderOption={renderFriend}
-                /> */}
-                {/* <SelectSearch
-                    name="colors"
-                    multiple
-                    search={false}
-                    value={this.state.colors}
-                    height={172}
-                    options={colors}
-                    renderOption={renderColors}
-                /> */}
       
         <div className="row">
         
