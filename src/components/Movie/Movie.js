@@ -40,6 +40,7 @@ class MoviePage extends Component {
      this.setState({MovieNames:moviename});
      console.log('state changed? ',this.state.MovieNames)
      window.scrollTo(0, 0);
+     this.props.GetAllComments(moviename);
    }
    randomize=(a, b) =>{
     return Math.random() - 0.5;
