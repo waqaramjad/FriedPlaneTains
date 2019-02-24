@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import  Comment from '../Comment/Comment'
-
+import OtherMovies from "../Movie/OtherMovies";
 import {
   changeName,
   GoogleSignin,
@@ -36,7 +36,27 @@ class MoviePage extends Component {
    })
    console.log(this.state.commentText);
    }
+   changeMovie=(moviename)=>{
+     this.setState({MovieNames:moviename});
+     console.log('state changed? ',this.state.MovieNames)
+     window.scrollTo(0, 0);
+   }
 
+   displayMovies=(MovieObj)=>{
+    let tumbnail=[];
+    for (let [key, value] of Object.entries(MovieObj)) {
+      
+      // console.log( "values", value);
+     
+        tumbnail.push(
+        <OtherMovies movielink={value.name} MovieTumbnail={value.MovieTumbnail} ImgAlt={value.ImgAlt} Title={value.Title} Year={value.Year} Rating={value.Rating}
+        ChangeTheMovie={this.changeMovie} 
+        />)
+      
+  }
+  return tumbnail;
+
+  }
    SaveComment=()=>{
     let commentObj={
       userWhoPerformedTheComment:this.props.CurrentUser.displayname,
@@ -145,9 +165,26 @@ var movie =  this.props.match.params.moviename
                       </h4>
                     )}
                   </div>
+                  {this.props.Comments?this.props.Comments.map(x => {
+                        return (
+                          <Comment Name={x.userWhoPerformedTheComment} frontImg={x.pictureOfTheUser}  
+                          Comments={x.Comment}
+                          />
+                        );
+                      }
+                      )
+                      :null}
+                </div>
+                <div className="col-md-4 col-12">
+                <h4 className="text-white">Other Movies</h4>
+                {this.props.MOVIES ?
+       this.displayMovies(this.props.MOVIES)
+          
+         :null
+          }
                 </div>
               </div>
-              <div className="row">
+              {/* <div className="row">
               <div className="col-12 col-md-7 offset-md-1">
                       {this.props.Comments?this.props.Comments.map(x => {
                         return (
@@ -159,7 +196,7 @@ var movie =  this.props.match.params.moviename
                       )
                       :null}
               </div>
-              </div>
+              </div> */}
             </div>
           ) : (
             <div className="row">
