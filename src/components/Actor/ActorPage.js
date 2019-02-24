@@ -6,7 +6,7 @@ import Rating from 'react-rating'
 
 import {
   AcrtorsData
-
+,ActorsRating
 } from "../../store/actions/action";
 class ActorPage extends Component {
 
@@ -34,6 +34,9 @@ this.ratingSystem = this.ratingSystem.bind(this)
   ratingSystem(rating , object ){
 console.log(rating)
 console.log(object)
+// var currentUser = firebase.auth().currentUser
+    // console.log(currentUser)
+   this.props.ActorsRating(rating ,object )
 
   }
   render() {
@@ -124,7 +127,10 @@ function mapDispatchToProp(dispatch) {
     
     AcrtorsData: () => {
       dispatch(AcrtorsData());
-    }
+    },
+    ActorsRating: (rating ,object ) => {
+      dispatch(ActorsRating(rating ,object ));
+    },
   };
 }
 

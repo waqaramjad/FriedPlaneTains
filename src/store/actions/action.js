@@ -235,14 +235,48 @@ export function ProfileSaveFilmList(profile) {
   return dispatch => {
       console.log(profile)
 var filmName = profile.concat('Save')
-      var currentUser = firebase.auth().currentUser
-      if(currentUser == null){
+var currentUser = firebase.auth().currentUser
+if(currentUser == null){
         alert('Please Sign in To continue ')
       }
       else{
 
       console.log(currentUser.uid)
       firebase.database().ref('Users/'+currentUser.uid+'/SaveMovies/'+filmName).update({SaveFilm : profile})
+      // .then((data) => {
+        
+      //         console.log('Cinema')
+      //         console.log(data.val())
+      //         let Cinema = data.val();
+      
+      //         dispatch({ type: 'PROFILESAVELIST', payload: Cinema })
+      
+      
+
+      
+      
+      //     })
+    }
+  }
+}
+export function ActorsRating(rating , ObjectData) {
+  return dispatch => {
+    // var filmName = profile.concat('Save')
+    var ActorName = ObjectData.name
+    var SaveAvtorName = ActorName.concat('Save')
+    console.log(ActorName)
+    console.log(rating)
+    var ratingObject = { 
+     
+    }
+    var currentUser = firebase.auth().currentUser
+    if(currentUser == null){
+        alert('Please Sign in To continue ')
+      }
+      else{
+
+      // console.log(currentUser.uid)
+      firebase.database().ref('Rating/'+currentUser.uid+'/'+ActorName).update({ActorRating : rating})
       // .then((data) => {
 
       //         console.log('Cinema')
