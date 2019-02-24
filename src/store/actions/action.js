@@ -293,6 +293,40 @@ export function ActorsRating(rating , ObjectData) {
         }
   }
 }
+export function MovieRating(rating , ObjectData) {
+  return dispatch => {
+    // var filmName = profile.concat('Save')
+    var MovieName = ObjectData.Title
+    // var SaveAvtorName = ActorName.concat('Save')
+    console.log(MovieName)
+    console.log(rating)
+    var ratingObject = { 
+     
+    }
+    var currentUser = firebase.auth().currentUser
+    if(currentUser == null){
+        alert('Please Sign in To continue ')
+      }
+      else{
+
+      // console.log(currentUser.uid)
+      firebase.database().ref('Rating/Movie/'+currentUser.uid+'/'+MovieName).update({MovieName : rating})
+      // .then((data) => {
+
+      //         console.log('Cinema')
+      //         console.log(data.val())
+      //         let Cinema = data.val();
+
+      //         dispatch({ type: 'PROFILESAVELIST', payload: Cinema })
+
+
+
+
+
+      //     })
+        }
+  }
+}
 
 
 
@@ -343,6 +377,35 @@ export function getActorRating() {
               let AcrorRating = data.val();
 
               dispatch({ type: 'ActorRating', payload: AcrorRating })
+
+
+
+
+
+          })
+  }
+}
+}
+
+export function getMovieRating() {
+  return dispatch => {
+    // console.log(profile)
+// var filmName = profile.concat('Save')
+    var currentUser = firebase.auth().currentUser
+    console.log(currentUser)
+    if(currentUser == null){
+      alert('Please Sign in To continue ')
+    }
+    else{
+
+      firebase.database().ref('Rating/Movie/'+currentUser.uid+'/').once('value')
+      .then((data) => {
+
+              // console.log('Cinema')
+              console.log(data.val())
+              let AcrorRating = data.val();
+
+              dispatch({ type: 'MovieRating', payload: AcrorRating })
 
 
 

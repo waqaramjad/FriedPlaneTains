@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Rating from 'react-rating'
 import { connect } from "react-redux";
+import {
+  
+MovieRating
+} from "../../store/actions/action";
 
 // const MovieItem = props => {
   //  let StarRating = rating => {
@@ -44,7 +48,7 @@ import { connect } from "react-redux";
   console.log(object)
   // var currentUser = firebase.auth().currentUser
       // console.log(currentUser)
-    //  this.props.ActorsRating(rating ,object )
+     this.props.MovieRating(rating ,object )
   
     }
     render() {
@@ -88,8 +92,8 @@ import { connect } from "react-redux";
               placeholderSymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
               fullSymbol={<img src="https://i.ibb.co/b25dkB4/star-yellow.png" className="icon" />}
               // onHover={(value  )=>{console.log(myActors)}}
-              onClick={(value)=>{that.ratingSystem(value  )}}
-
+              onClick={(value)=>{that.ratingSystem(value ,myprops )}}
+              initialRating={myprops.Rating}
               // onChange={(value)=>{console.log(value)}}
              />
                           </p>
@@ -115,10 +119,9 @@ function mapDispatchToProp(dispatch) {
   //   AcrtorsData: () => {
   //     dispatch(AcrtorsData());
   //   },
-  //   ActorsRating: (rating ,object ) => {
-  //     dispatch(ActorsRating(rating ,object ));
-  //   },
-  // };
+  MovieRating: (rating ,object ) => {
+    dispatch(MovieRating(rating ,object ));
+  },
 }
 }
 
