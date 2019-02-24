@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import './movieStyle.css'
+import Rating from 'react-rating'
+// var Rating = require('react-rating');
 const MoviesPage = () => {
   return (
 <div class="container">
@@ -19,12 +21,21 @@ const MoviesPage = () => {
               <h4 className="card-title text-center">Ant-Man</h4>
               <p className="text-center"> Year: 2016 </p>
               <p className="text-center">
-                {" "}
+              <Rating
+              emptySymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
+              // emptySymbol={<img src="./starempty.png" className="icon" />}
+              placeholderSymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
+              fullSymbol={<img src="https://i.ibb.co/b25dkB4/star-yellow.png" className="icon" />}
+              onHover={(value, asd)=>{console.log(asd)}}
+              // onClick={(value)=>{console.log(value)}}
+              // onChange={(value)=>{console.log(value)}}
+             />
+                {/* {" "}
                 rating: <span class="fa fa-star checked" />
                 <span class="fa fa-star checked" />
                 <span class="fa fa-star checked" />
                 <span class="fa fa-star" />
-                <span class="fa fa-star" />
+                <span class="fa fa-star" /> */}
               </p>
             </div>
           </div>
