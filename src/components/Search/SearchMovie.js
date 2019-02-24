@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import  Comment from '../Comment/Comment'
-
+import OtherMovies from "../Movie/OtherMovies";
 import {
   changeName,
   GoogleSignin,
@@ -11,20 +11,21 @@ import {
   MOVIESData,CommentOnMovie,GetCommentsofMovie
 
 } from "../../store/actions/action";
+import ScrollUp from '../ScrollUp/scroll';
 import './SingleMovieStyle.css'
+import './movieStyle.css'
+
 import firebase from 'firebase'
 var Movies ; 
 var MovieNames
-var movieValue 
-var movieNameForComments
 
-class SearchMovie extends Component {
+class MoviePage extends Component {
     constructor(props){
         super(props);
         Movies = this.props.MOVIES
         this.state={
-          MOVIES: '',
-      MovieNames: '',
+          MOVIES: "",
+      MovieNames: "",
       commentText:'',
         }
         this.addPlayList = this.addPlayList.bind(this)
@@ -37,7 +38,41 @@ class SearchMovie extends Component {
    })
    console.log(this.state.commentText);
    }
+   changeMovie=(moviename)=>{
+     this.setState({MovieNames:moviename});
+     console.log('state changed? ',this.state.MovieNames)
+     window.scrollTo(0, 0);
+     this.props.GetAllComments(moviename);
+   }
+   randomize=(a, b) =>{
+    return Math.random() - 0.5;
+}
+   displayMovies=(MovieObj)=>{
+    let tumbnail=[];
+    
+  let arrofobj=[];
+    for (let [key, value] of Object.entries(MovieObj)) {
+      
+      // console.log( "values", value);
+        arrofobj.push(value);
+      
+  }
+  arrofobj.sort(this.randomize);
+  for(let i=0;i<5;i++){
+    tumbnail.push(
+          <OtherMovies movielink={arrofobj[i].name} MovieTumbnail={arrofobj[i].MovieTumbnail} ImgAlt={arrofobj[i].ImgAlt} Title={arrofobj[i].Title} Year={arrofobj[i].Year} Rating={arrofobj[i].Rating}
+          ChangeTheMovie={this.changeMovie} 
+          />)
+  }
+  // arrofobj.map(value=>{
+  //   tumbnail.push(
+  //     <OtherMovies movielink={value.name} MovieTumbnail={value.MovieTumbnail} ImgAlt={value.ImgAlt} Title={value.Title} Year={value.Year} Rating={value.Rating}
+  //     ChangeTheMovie={this.changeMovie} 
+  //     />)
+  // })
+  return tumbnail;
 
+  }
    SaveComment=()=>{
     let commentObj={
       userWhoPerformedTheComment:this.props.CurrentUser.displayname,
@@ -59,18 +94,11 @@ class SearchMovie extends Component {
       // var MovieNames = this.props.match.params.moviename;
       //  var TrailerSource =
       //  "https://www.youtube.com/embed/" + this.props.MOVIES[MovieNames].TrailerUrl;
-      console.log(movieNameForComments)
-      // var a = movieNameForComments.replace('"','')
-      // console.log(a)
-      // var StringComments = String(movieNameForComments)
-      // var StringComments = "Antman"
-      // console.log(StringComments)
-      // var 
-     this.props.GetAllComments(movieNameForComments);
+     this.props.GetAllComments(this.props.match.params.moviename);
      
       this.setState({
         MOVIES: this.props.MOVIES,
-        MovieNames: movieNameForComments,
+        MovieNames: this.props.match.params.moviename,
        
       });
     }
@@ -80,34 +108,26 @@ class SearchMovie extends Component {
 
 
     addPlayList(){
-console.log(movieValue)
-// var movie =  this.props.match.params.moviename
-      this.props.ProfileSaveFilmList(movieValue)
+console.log(MovieNames)
+var movie =  this.props.match.params.moviename
+      this.props.ProfileSaveFilmList(movie)
 // var user = firebase.auth().currentUser
 // console.log('user' , user)
 // console.log('user.uid' , user.uid)
 
     }
     render() {
-      // var movie =  this.props.match.params.moviename
-      // this.props.ProfileSaveFilmList(movie)
-console.log(this.props)
-if(this.props.location.searchData!=undefined){
-  var movieData = this.props.location.searchData
-        movieNameForComments = movieData.value
-        movieValue = movieData.name
-}
-      
       return (
         <div className="container-fluid back">
           {this.state.MOVIES ? (
             <div>
               <div className="row">
+              <ScrollUp />
                 <div
                   className="col-md-11 offset-md-1"
                   style={{ marginTop: "15px" }}
                 >
-                  <h3 className='topText'>{movieData.Title}</h3>
+                  <h3 className='topText'>{this.state.MOVIES[this.state.MovieNames].Title}</h3>
                   <button className='AddWatchBtn' onClick={()=>{this.addPlayList()}} >Add to watch List </button>
                 </div>
               </div>
@@ -123,7 +143,7 @@ if(this.props.location.searchData!=undefined){
                         height="315"
                         src={
                           "https://www.youtube.com/embed/" +
-                          movieData.TrailerUrl
+                          this.state.MOVIES[this.state.MovieNames].TrailerUrl
                         }
                         frameBorder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -135,7 +155,7 @@ if(this.props.location.searchData!=undefined){
                         marginLeft:'3%' , marginRight: '3%'}}
                     >
                       <h6 className='discription'>
-                        {movieData.discription}
+                        {this.state.MOVIES[this.state.MovieNames].discription}
                       </h6>
                     </div>
                     {this.props.CurrentUser ? (
@@ -161,9 +181,26 @@ if(this.props.location.searchData!=undefined){
                       </h4>
                     )}
                   </div>
+                  {this.props.Comments?this.props.Comments.map(x => {
+                        return (
+                          <Comment Name={x.userWhoPerformedTheComment} frontImg={x.pictureOfTheUser}  
+                          Comments={x.Comment}
+                          />
+                        );
+                      }
+                      )
+                      :null}
+                </div>
+                <div className="col-md-4 col-12">
+                <h4 className="text-white">Other Movies</h4>
+                {this.props.MOVIES ?
+       this.displayMovies(this.props.MOVIES)
+          
+         :null
+          }
                 </div>
               </div>
-              <div className="row">
+              {/* <div className="row">
               <div className="col-12 col-md-7 offset-md-1">
                       {this.props.Comments?this.props.Comments.map(x => {
                         return (
@@ -175,19 +212,17 @@ if(this.props.location.searchData!=undefined){
                       )
                       :null}
               </div>
-              </div>
+              </div> */}
             </div>
-          ) : 
-          (
+          ) : (
             <div className="row">
               <div className="col-11 offset-1" style={{ margin: "20px" }}>
-                <h2 style={{color:'white'}}>
+                <h2>
                   Oh.. there seemed to be a problem ...please go back to home page
                 </h2>
               </div>
             </div>
-          )
-          }
+          )}
         </div>
       );
     }
@@ -226,4 +261,4 @@ function mapDispatchToProp(dispatch) {
 export default connect(
   mapStateToProp,
   mapDispatchToProp
-)(SearchMovie);
+)(MoviePage);
