@@ -220,56 +220,7 @@ console.log(this.props)
         </div>
       </div>
 
-      <div className="row" style={{ marginTop: "15px" }}>
-      <div className="col-md-4 offset-md-2 text-left">
-          <h4
-            style={{
-              backgroundColor: "#101613",
-              color: "#ffff00",
-              textAlign: "center",
-              padding: "20px",
-              margin: "0px auto"
-            }}
-          >
-            Saved Movie
-          </h4>
-          <table class="table  table-bordered  table-hover table-dark">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col" className="text-center">
-                  No
-                </th>
-                <th scope="col" className="text-center">
-                  Movie Name
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {
 
-                this.props.PlayList!=undefined ? Object.keys( this.props.PlayList).map((data, index) => {
-var myData = this.props.PlayList[data]
-
-                  console.log(data)
-                  return(
-                    <tr>
-                    <td scope="row" className="text-center">
-                      {index}
-                    </td>
-                    <td className="text-center">{myData.SaveFilm}</td>
-                  </tr>
-                  )
-
-
-                }) : null
-              }
-            </tbody>
-            </table>
-
-
-      
-      </div>
-      </div>
       <div className="row" style={{ marginTop: "15px" }}>
       <div className="col-md-4 offset-md-2 text-left">
           <h4
@@ -323,7 +274,7 @@ var myData = this.props.ActorRating[data]
 
       
       </div>
-      <div className="col-md-4 offset-md-2 text-left">
+      <div className="col-md-4  text-left">
           <h4
             style={{
               backgroundColor: "#101613",
@@ -363,6 +314,56 @@ var myData = this.props.MovieRating[data]
                     </td>
                     <td className="text-center">{data}</td>
                     <td className="text-center">{myData.MovieName}</td>
+                  </tr>
+                  )
+
+
+                }) : null
+              }
+            </tbody>
+            </table>
+
+
+      
+      </div>
+      </div>
+      <div className="row" style={{ marginTop: "15px" }}>
+      <div className="col-md-4 offset-md-2 text-left">
+          <h4
+            style={{
+              backgroundColor: "#101613",
+              color: "#ffff00",
+              textAlign: "center",
+              padding: "20px",
+              margin: "0px auto"
+            }}
+          >
+            Saved Movie
+          </h4>
+          <table class="table  table-bordered  table-hover table-dark">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" className="text-center">
+                  No
+                </th>
+                <th scope="col" className="text-center">
+                  Movie Name
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+
+                this.props.PlayList!=undefined ? Object.keys( this.props.PlayList).map((data, index) => {
+var myData = this.props.PlayList[data]
+
+                  console.log(data)
+                  return(
+                    <tr>
+                    <td scope="row" className="text-center">
+                      {index}
+                    </td>
+                    <td className="text-center">{myData.SaveFilm}</td>
                   </tr>
                   )
 
