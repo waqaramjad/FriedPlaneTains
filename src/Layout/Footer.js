@@ -15,14 +15,14 @@ const Footer = () => {
           <div className="col-md-12">
             <ul className="nav justify-content-center">
               <li className="nav-item">
-                <a className="nav-link  footerNavLink" to="/Cinema">
+                <Link className="nav-link  footerNavLink" to="/Cinema">
                   Showtimes
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link footerNavLink" to="/News">
+                <Link className="nav-link footerNavLink" to="/News">
                   News 
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link footerNavLink" to="/contact">
@@ -35,28 +35,28 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link footerNavLink " to="/TOS">
+                <Link className="nav-link footerNavLink " to="/TOS">
                   Terms Of Use
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
           <div className="col-md-12">
             <ul className="nav justify-content-center">
               <li className="nav-item">
-                <a className="nav-link footerNavLink" to="#">
+                <Link className="nav-link footerNavLink" to="#">
                   <img src={FBicon} style={{width:'40px',height:'40px'}} />
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link footerNavLink" to="#">
+                <Link className="nav-link footerNavLink" to="#">
                 <img src={Twittericon} style={{width:'40px',height:'40px'}} />
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link footerNavLink" to="#">
+                <Link className="nav-link footerNavLink" to="#">
                 <img src={Instaicon} style={{width:'40px',height:'40px'}} />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

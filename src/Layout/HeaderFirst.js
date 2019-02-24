@@ -6,31 +6,27 @@ import "./header.css";
 import { Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 // import { facebookSignout } from "../store/actions/action";
-import SelectSearch from 'react-select-search'
+import SelectSearch from "react-select-search";
 import MobileLogo from "../media/fp_logo_small.png";
-import './searchBar.css'
-import history from '../History';
+import "./searchBar.css";
+import history from "../History";
 
-import {
-  facebookSignout , 
-  SearchData ,
-} from "../store/actions/action";
+import { facebookSignout, SearchData } from "../store/actions/action";
 var SEARCHDATANODE = [];
-var MYDATA = []
+var MYDATA = [];
 class HeaderFirst extends Component {
   constructor(props) {
     super(props);
     this.state = {
       menuOpen: false
     };
-  
-    this.props.SearchData()
+
+    this.props.SearchData();
   }
 
   handleStateChange(state) {
     this.setState({ menuOpen: state.isOpen });
   }
-
 
   closeMenu() {
     this.setState({ menuOpen: false });
@@ -41,39 +37,88 @@ class HeaderFirst extends Component {
   }
   clear = () => {
     this.setState({
-        font: '',
-        country: '',
-        friends: [],
-        colors: [] , 
-        SEARCHDATA : ''
-       
+      font: "",
+      country: "",
+      friends: [],
+      colors: [],
+      SEARCHDATA: ""
     });
   };
   state = {
-    font: 'Playfair Display',
-    country: 'SE',
+    font: "Playfair Display",
+    country: "SE",
     friends: [],
-    colors: ['red', 'purple'] , 
-    SEARCHDATA : 'DONE'
-
-};
+    colors: ["red", "purple"],
+    SEARCHDATA: "DONE"
+  };
   render() {
-    var that = this
-    SEARCHDATANODE = this.props.SEARCHDATA
-     
+    var that = this;
+    SEARCHDATANODE = this.props.SEARCHDATA;
+
     return (
       // main div start
       <div>
         {/* our sidebar ,its styling is done in navStyle.css */}
+        
         <Menu
           isOpen={this.state.menuOpen}
           onStateChange={state => this.handleStateChange(state)}
         >
+          <div className="menuitem">
+            <div
+              className="input-group "
+              style={{ padding: "0px", width: "230px" }}
+            >
+              {(() => {
+                // do this right now
+                console.log("comin");
+                if (that.props.SEARCHDATA != undefined) {
+                  console.log(that.props.SEARCHDATA);
+                  // console.log(cont)
+                  return (
+                    <SelectSearch
+                      name="Searching"
+                      mode="input"
+                      // value={that.state.SEARCHDATA}
+                      // options={that.props.SEARCHDATA}
+                      options={SEARCHDATANODE}
+                      placeholder="Search Actor and Films"
+                      // onChange={(val , val1 , val2)=>{history.push('/Actor/'+val.value)}}
+                      onChange={(val, val1, val2) => {
+                        console.log(val);
+                        if (val.Bio != undefined) {
+                          history.push({
+                            pathname: "/Search",
+                            searchData: val
+                          });
+                          this.closeMenu();
+                        } else {
+                          history.push({
+                            pathname: "/SearchMovie",
+                            searchData: val
+                          });
+                          this.closeMenu();
+                        }
+                      }}
+                      // onChange={(val , val1 , val2)=>{ console.log(val) ;console.log(val1) ;console.log(val2)   }}
+                    />
+                  );
+                }
+                console.log("Look at me, I'm running");
+              })()}
+
+              <div className="input-group-append">
+                {/* <button className="btn SearchButtonStyling" type="button">
+                    Search
+                  </button> */}
+              </div>
+            </div>
+          </div>
+          
           <Link to="/" className="menuItem" onClick={() => this.closeMenu()}>
             Home
           </Link>
-          
-        
+
           <Link
             to="/Actors"
             className="menuItem"
@@ -81,17 +126,17 @@ class HeaderFirst extends Component {
           >
             Actors
           </Link>
-         
+
           <Link
- to="/Movies"       
- className="menuItem"
+            to="/Movies"
+            className="menuItem"
             onClick={() => this.closeMenu()}
           >
             Movies
           </Link>
           <Link
- to="/Cinema"       
-      className="menuItem"
+            to="/Cinema"
+            className="menuItem"
             onClick={() => this.closeMenu()}
           >
             Cinema
@@ -110,8 +155,7 @@ class HeaderFirst extends Component {
           >
             Contact
           </Link>
-          
-         
+        
         </Menu>
         {/* <CustomIcon /> */}
         {/* sidebar menu ends */}
@@ -139,7 +183,11 @@ class HeaderFirst extends Component {
             >
               {/* first col and our logo  */}
               <Link className="navbar-brand" to="/">
-                <img className="iconSize" src={MobileLogo} alt="fried plantins logo" />
+                <img
+                  className="iconSize"
+                  src={MobileLogo}
+                  alt="fried plantins logo"
+                />
               </Link>
             </div>
             {/* second col starts and our search icon  */}
@@ -154,11 +202,7 @@ class HeaderFirst extends Component {
                 aria-controls="collapseExample"
                 className="navbarTextSize "
               >
-                Search{" "}
-                <i
-                  className=" navbarIconSize fas fa-search"
-                  
-                />
+                Search <i className=" navbarIconSize fas fa-search" />
               </span>
             </div>
             {/* second col of search icon ends */}
@@ -216,11 +260,7 @@ class HeaderFirst extends Component {
                   data-target="#exampleModal"
                 >
                   <span className="navbarTextSize ">
-                    Login{" "}
-                    <i
-                      className=" navbarIconSize far fa-play-circle"
-                      
-                    />
+                    Login <i className=" navbarIconSize far fa-play-circle" />
                   </span>
                 </Link>
                 <Model />
@@ -233,58 +273,61 @@ class HeaderFirst extends Component {
                 className="navbarTextSize "
                 onClick={() => this.toggleMenu()}
               >
-                Menu{" "}
-                <i
-                  className=" navbarIconSize fas fa-bars"
-                
-                />
+                Menu <i className=" navbarIconSize fas fa-bars" />
               </span>
             </div>
             {/* fourth col ends of menu */}
           </div>
-          
+
           {/* first row ends which contains our navbar */}
           {/* second row contains our search bar  */}
           <div className="row">
             {/* col of our search form  */}
-            <div className="col-6 offset-3">
+            <div className="col-4 offset-4">
               <div className="collapse" id="collapseExample">
-              <div className="input-group " style={{padding:'20px'}}>
-                {
-                (function(){
-                  // do this right now
-                  console.log('comin')
-                  if(that.props.SEARCHDATA!=undefined){
-console.log(that.props.SEARCHDATA)
-// console.log(cont)
-                    return(
-  <SelectSearch
-                    name="Searching"
-                    mode="input"
-                    // value={that.state.SEARCHDATA}
-                    // options={that.props.SEARCHDATA}
-                    options={SEARCHDATANODE}
-                    placeholder="Search Actor and Films"
-                    // onChange={(val , val1 , val2)=>{history.push('/Actor/'+val.value)}}
-                    onChange={(val , val1 , val2)=>{ console.log(val);  if(val.Bio!=undefined){history.push({pathname :'/Search', searchData : val})}
-                  else{
-                    history.push({pathname :'/SearchMovie', searchData : val})
-                  }
-                  }}
-                    // onChange={(val , val1 , val2)=>{ console.log(val) ;console.log(val1) ;console.log(val2)   }}
-                /> 
-)
-                  }
-                  console.log("Look at me, I'm running");
-              })()
-              }
-              
-                <div className="input-group-append">
-                  {/* <button className="btn SearchButtonStyling" type="button">
+                <div className="input-group " style={{ padding: "20px" }}>
+                  {(function() {
+                    // do this right now
+                    console.log("comin");
+                    if (that.props.SEARCHDATA != undefined) {
+                      console.log(that.props.SEARCHDATA);
+                      // console.log(cont)
+                      return (
+                        <SelectSearch
+                          name="Searching"
+                          mode="input"
+                          // value={that.state.SEARCHDATA}
+                          // options={that.props.SEARCHDATA}
+                          options={SEARCHDATANODE}
+                          placeholder="Search Actor and Films"
+                          // onChange={(val , val1 , val2)=>{history.push('/Actor/'+val.value)}}
+                          onChange={(val, val1, val2) => {
+                            console.log(val);
+                            if (val.Bio != undefined) {
+                              history.push({
+                                pathname: "/Search",
+                                searchData: val
+                              });
+                            } else {
+                              history.push({
+                                pathname: "/SearchMovie",
+                                searchData: val
+                              });
+                            }
+                          }}
+                          // onChange={(val , val1 , val2)=>{ console.log(val) ;console.log(val1) ;console.log(val2)   }}
+                        />
+                      );
+                    }
+                    console.log("Look at me, I'm running");
+                  })()}
+
+                  <div className="input-group-append">
+                    {/* <button className="btn SearchButtonStyling" type="button">
                     Search
                   </button> */}
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
             {/* col of our search form ends */}
@@ -300,16 +343,16 @@ console.log(that.props.SEARCHDATA)
 function mapStateToProp(state) {
   return {
     userName: state.reducer.name,
-    CurrentUser: state.reducer.currentUser
- ,SEARCHDATA: state.reducer.SEARCHDATA
+    CurrentUser: state.reducer.currentUser,
+    SEARCHDATA: state.reducer.SEARCHDATA
   };
 }
 function mapDispatchToProp(dispatch) {
   return {
     PerformLogout: () => {
       dispatch(facebookSignout());
-    } , 
-    SearchData:()=>{
+    },
+    SearchData: () => {
       dispatch(SearchData());
     }
   };
