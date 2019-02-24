@@ -403,9 +403,9 @@ export function getMovieRating() {
 
               // console.log('Cinema')
               console.log(data.val())
-              let AcrorRating = data.val();
+              let MovieRating = data.val();
 
-              dispatch({ type: 'MovieRating', payload: AcrorRating })
+              dispatch({ type: 'MovieRating', payload: MovieRating })
 
 
 
