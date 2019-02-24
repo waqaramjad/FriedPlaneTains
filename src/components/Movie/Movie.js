@@ -13,6 +13,8 @@ import {
 } from "../../store/actions/action";
 import ScrollUp from '../ScrollUp/scroll';
 import './SingleMovieStyle.css'
+import './movieStyle.css'
+
 import firebase from 'firebase'
 var Movies ; 
 var MovieNames

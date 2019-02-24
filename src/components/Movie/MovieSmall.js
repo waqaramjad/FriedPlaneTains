@@ -6,6 +6,7 @@ import {
   
 MovieRating
 } from "../../store/actions/action";
+import './movieStyle.css'
 
 // const MovieItem = props => {
   //  let StarRating = rating => {

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import {
   MOVIESData
 } from "../../store/actions/action";
+import './movieStyle.css'
 
 var i = 0
 class MoviesPage extends Component {
