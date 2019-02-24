@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Rating from 'react-rating'
 
 const MovieItem = props => {
    let StarRating = rating => {

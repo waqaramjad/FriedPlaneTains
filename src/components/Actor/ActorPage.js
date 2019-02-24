@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import './movieStyle.css'
+import Rating from 'react-rating'
+
 import {
   AcrtorsData
 
@@ -62,11 +64,21 @@ var actors = this.props.Actors
                           {/* <p className="text-center"> Year: 2016 </p> */}
                           <p className="text-center">
                             {" "}
-                            rating: <span class="fa fa-star checked" />
+                            {/* rating: <span class="fa fa-star checked" />
                             <span class="fa fa-star checked" />
                             <span class="fa fa-star checked" />
                             <span class="fa fa-star  " />
-                            <span class="fa fa-star" />
+                            <span class="fa fa-star" /> */}
+
+<Rating
+              emptySymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
+              // emptySymbol={<img src="./starempty.png" className="icon" />}
+              placeholderSymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
+              fullSymbol={<img src="https://i.ibb.co/b25dkB4/star-yellow.png" className="icon" />}
+              onHover={(value  )=>{console.log(myActors)}}
+              // onClick={(value)=>{console.log(value)}}
+              // onChange={(value)=>{console.log(value)}}
+             />
                           </p>
                         </div>
                       </div>
