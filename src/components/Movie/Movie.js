@@ -41,19 +41,32 @@ class MoviePage extends Component {
      console.log('state changed? ',this.state.MovieNames)
      window.scrollTo(0, 0);
    }
-
+   randomize=(a, b) =>{
+    return Math.random() - 0.5;
+}
    displayMovies=(MovieObj)=>{
     let tumbnail=[];
+    
+  let arrofobj=[];
     for (let [key, value] of Object.entries(MovieObj)) {
       
       // console.log( "values", value);
-     
-        tumbnail.push(
-        <OtherMovies movielink={value.name} MovieTumbnail={value.MovieTumbnail} ImgAlt={value.ImgAlt} Title={value.Title} Year={value.Year} Rating={value.Rating}
-        ChangeTheMovie={this.changeMovie} 
-        />)
+        arrofobj.push(value);
       
   }
+  arrofobj.sort(this.randomize);
+  for(let i=0;i<5;i++){
+    tumbnail.push(
+          <OtherMovies movielink={arrofobj[i].name} MovieTumbnail={arrofobj[i].MovieTumbnail} ImgAlt={arrofobj[i].ImgAlt} Title={arrofobj[i].Title} Year={arrofobj[i].Year} Rating={arrofobj[i].Rating}
+          ChangeTheMovie={this.changeMovie} 
+          />)
+  }
+  // arrofobj.map(value=>{
+  //   tumbnail.push(
+  //     <OtherMovies movielink={value.name} MovieTumbnail={value.MovieTumbnail} ImgAlt={value.ImgAlt} Title={value.Title} Year={value.Year} Rating={value.Rating}
+  //     ChangeTheMovie={this.changeMovie} 
+  //     />)
+  // })
   return tumbnail;
 
   }
