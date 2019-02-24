@@ -68,7 +68,7 @@ import './movieStyle.css'
       >
         <div className="card">
           <img
-            className="moviePosterImg"
+            className="moviePosterImg image"
             src={myprops.MovieTumbnail}
             alt={myprops.ImgAlt}
           />
@@ -88,7 +88,7 @@ import './movieStyle.css'
                             <span class="fa fa-star" /> */}
 
 <Rating
-              emptySymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
+              emptySymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon " />}
               // emptySymbol={<img src="./starempty.png" className="icon" />}
               placeholderSymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
               fullSymbol={<img src="https://i.ibb.co/b25dkB4/star-yellow.png" className="icon" />}
