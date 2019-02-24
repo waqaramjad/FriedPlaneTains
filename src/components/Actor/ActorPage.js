@@ -22,10 +22,19 @@ console.log(this.props.Actors)
 var actors = this.props.Actors
 // this.setState({
 //   Actors : actors
+this.ratingSystem = this.ratingSystem.bind(this)
 // })
   }
+
+
    componentDidMount() {
     // this.props.GetAllNewsFromFirebase();
+  }
+
+  ratingSystem(rating , object ){
+console.log(rating)
+console.log(object)
+
   }
   render() {
     console.log(this.props.Actors)
@@ -75,8 +84,9 @@ var actors = this.props.Actors
               // emptySymbol={<img src="./starempty.png" className="icon" />}
               placeholderSymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
               fullSymbol={<img src="https://i.ibb.co/b25dkB4/star-yellow.png" className="icon" />}
-              onHover={(value  )=>{console.log(myActors)}}
-              // onClick={(value)=>{console.log(value)}}
+              // onHover={(value  )=>{console.log(myActors)}}
+              onClick={(value)=>{that.ratingSystem(value ,myActors )}}
+
               // onChange={(value)=>{console.log(value)}}
              />
                           </p>
