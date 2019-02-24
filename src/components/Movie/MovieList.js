@@ -6,21 +6,28 @@ import {
   MOVIESData
 } from "../../store/actions/action";
 
-
+var i = 0
 class MoviesList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       
     };
+    this.props.MOVIESData()
+    // this.props.MOVIESData()
   }
   displayMovies=(MovieObj)=>{
     let tumbnail=[];
+    var i = 0
+
     for (let [key, value] of Object.entries(MovieObj)) {
       
       console.log( "values", value);
-     
-        tumbnail.push(<ShowMovieTumbnail movielink={value.name} MovieTumbnail={value.MovieTumbnail} ImgAlt={value.ImgAlt} Title={value.Title} Year={value.Year} Rating={value.Rating}/>)
+     if(i!=6){
+
+       tumbnail.push(<ShowMovieTumbnail movielink={value.name} MovieTumbnail={value.MovieTumbnail} ImgAlt={value.ImgAlt} Title={value.Title} Year={value.Year} Rating={value.Rating}/>)
+     i++
+      }
       
   }
   return tumbnail;
@@ -30,6 +37,9 @@ class MoviesList extends Component {
 
   }
   render() {
+
+    console.log('render list' , this.props.MOVIES)
+
     return (
       <div class="container">
         <div className="row">
@@ -232,6 +242,8 @@ class MoviesList extends Component {
 }
 
 function mapStateToProp(state) {
+  console.log('reducer list' , state)
+
   return {
     MOVIES: state.reducer.MOVIES
   };

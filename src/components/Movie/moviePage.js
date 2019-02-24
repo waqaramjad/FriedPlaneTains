@@ -1,53 +1,79 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-import './movieStyle.css'
-import Rating from 'react-rating'
-// var Rating = require('react-rating');
-const MoviesPage = () => {
-  return (
-<div class="container">
-<h2 style={{borderLeft: '8px solid rgb(255, 141, 27)', padding: '12px', marginLeft: '10px' ,     marginTop:' 4%'}}> Movies</h2>
+import React, { Component }from "react";
+import ShowMovieTumbnail from "./MovieSmall";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import {
+  MOVIESData
+} from "../../store/actions/action";
 
-      <div className="row">
-        <div className="col-lg-3 col-md-3 col-6 ">
+var i = 0
+class MoviesPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    };
+    // this.props.MOVIESData()
+  }
+  displayMovies=(MovieObj)=>{
+    let tumbnail=[];
+    for (let [key, value] of Object.entries(MovieObj)) {
+      
+      console.log( "values", value);
+    //  if(i!=6){
+
+       tumbnail.push(<ShowMovieTumbnail movielink={value.name} MovieTumbnail={value.MovieTumbnail} ImgAlt={value.ImgAlt} Title={value.Title} Year={value.Year} Rating={value.Rating}/>)
+    //  i++
+      // }
+      
+  }
+  return tumbnail;
+
+  }
+  componentDidMount() {
+
+  }
+  render() {
+    return (
+      <div class="container">
+        <h2 style={{borderLeft: '8px solid rgb(255, 141, 27)', padding: '12px', marginLeft: '10px' ,     marginTop:' 4%'}}> Movies</h2>
+        <div className="row">
+
+        {this.props.MOVIES ?
+       this.displayMovies(this.props.MOVIES)
+          
+         :null
+          }
+          {/* <div className="col-lg-3 col-md-3 col-6 ">
         <Link to="/detail/Antman" style={{color:'black',textDecoration:'none'}}> 
           <div className="card">
             <img
-              className="moviePosterImg image"
+              className="moviePosterImg "
               src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/other/ant_man_ver5.jpg"
-              alt="Card image cap"
+              alt="antman poster"
             />
             <div className="card-block">
               <h4 className="card-title text-center">Ant-Man</h4>
               <p className="text-center"> Year: 2016 </p>
               <p className="text-center">
-              <Rating
-              emptySymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
-              // emptySymbol={<img src="./starempty.png" className="icon" />}
-              placeholderSymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
-              fullSymbol={<img src="https://i.ibb.co/b25dkB4/star-yellow.png" className="icon" />}
-              onHover={(value, asd)=>{console.log(asd)}}
-              // onClick={(value)=>{console.log(value)}}
-              // onChange={(value)=>{console.log(value)}}
-             />
-                {/* {" "}
+                {" "}
                 rating: <span class="fa fa-star checked" />
                 <span class="fa fa-star checked" />
                 <span class="fa fa-star checked" />
                 <span class="fa fa-star" />
-                <span class="fa fa-star" /> */}
+                <span class="fa fa-star" />
               </p>
             </div>
           </div>
           </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
+        </div> */}
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/justiceLeague"style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-primary text-center">
             <img
-              className="moviePosterImg image "
+              className="moviePosterImg "
               src="https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/88207/90748/Justice-League-Advance-Style-Poster-buy-original-movie-posters-at-starstills__25567.1494429421.jpg?c=2?imbypass=on"
-              alt="Card image cap"
+              alt="justice league movie poster"
             />
             <div className="card-block">
               <h4 className="card-title text-center">Justice League</h4>
@@ -63,16 +89,15 @@ const MoviesPage = () => {
             </div>
           </div>
           </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
+        </div> */}
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/whiteHouseDown" style={{color:'black',textDecoration:'none'}}> 
-          <div className="card card-inverse card-success text-center ">
+          <div className="card card-inverse card-success text-center">
             <img
-              className="moviePosterImg  image "
+              className="moviePosterImg  "
               src="http://picpusdan8.free.fr/W/white%20house%20downa.jpg"
-              alt="Card image cap"
+              alt="white house down poster "
             />
-
             <div className="card-block">
               <h4 className="card-title text-center ">White House Down</h4>
               <p className="text-center"> Year: 2016 </p>
@@ -87,14 +112,14 @@ const MoviesPage = () => {
             </div>
           </div>
           </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
+        </div> */}
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/wonderWomen"style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-info text-center">
             <img
-              className="moviePosterImg image"
+              className="moviePosterImg"
               src="https://i.pinimg.com/originals/31/95/8d/31958d3dd38ca82ad9a64dd3edacfd2f.jpg"
-              alt="Card image cap"
+              alt="Wonder women poster"
             />
             <div className="card-block">
               <h4 className="card-title text-center">Wonder Woman</h4>
@@ -110,14 +135,14 @@ const MoviesPage = () => {
             </div>
           </div>
           </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
+        </div> */}
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/oceanEight" style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-info text-center">
             <img
-              className="moviePosterImg image"
+              className="moviePosterImg "
               src="https://cdn1.thr.com/sites/default/files/2017/12/sarah_paulson_screen_shot_-_every_con_has_its_pros-sq_2017.jpg"
-              alt="Card image cap"
+              alt="Oceans eleven poster"
             />
             <div className="card-block">
               <h4 className="card-title text-center">Oceans Eleven</h4>
@@ -133,15 +158,15 @@ const MoviesPage = () => {
             </div>
           </div>
           </Link>
-        </div>
-
+        </div> */}
+          {/* 
         <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/HacksawRidge" style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-info text-center">
             <img
-              className="moviePosterImg image"
+              className="moviePosterImg"
               src="https://lasallefalconer.com/wp-content/uploads/2017/04/share-img-900x473.jpg"
-              alt="Card image cap"
+              alt="Hacksaw ridge movie poster"
             />
             <div className="card-block">
               <h4 className="card-title text-center">Hacksaw Ridge</h4>
@@ -157,15 +182,15 @@ const MoviesPage = () => {
             </div>
           </div>
           </Link>
-        </div>
+        </div> */}
 
-        <div className="col-lg-3 col-md-3  col-6">
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/interview" style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-info text-center">
             <img
-              className="moviePosterImg image"
+              className="moviePosterImg "
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqZsMTKcFXNzESCQoJfC4zcwMdgft0Y2sxu8QsrIQg7TZOAcN0"
-              alt="Card image cap"
+              alt="Interview movie poster"
             />
             <div className="card-block">
               <h4 className="card-title text-center">The Interview</h4>
@@ -181,15 +206,15 @@ const MoviesPage = () => {
             </div>
           </div>
           </Link>
-        </div>
+        </div> */}
 
-        <div className="col-lg-3 col-md-3  col-6">
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/johnWick" style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-info text-center">
             <img
-              className="moviePosterImg image"
+              className="moviePosterImg "
               src="https://image.al.com/home/bama-media/width620/img/entertainment_impact/photo/jw2jpg-3fd0397399ecd913.jpg"
-              alt="Card image cap"
+              alt="John Wick"
             />
             <div className="card-block">
               <h4 className="card-title text-center">John Wick</h4>
@@ -205,109 +230,27 @@ const MoviesPage = () => {
             </div>
           </div>
           </Link>
+        </div> */}
         </div>
-
       </div>
-      <div className="row">
-        <div className="col-lg-3 col-md-3 col-6 ">
-        <Link to="/detail/BohemainRhapsody" style={{color:'black',textDecoration:'none'}}> 
-          <div className="card">
-            <img
-              className="moviePosterImg image"
-              src="https://s4827.pcdn.co/wp-content/uploads/2019/01/bohemian-rhapsody-banner.jpg"
-              alt="Card image cap"
-            />
-            <div className="card-block">
-              <h4 className="card-title text-center">"Bohemian Rhapsody"</h4>
-              <p className="text-center"> Year: 2015 </p>
-              <p className="text-center">
-                {" "}
-                rating: <span class="fa fa-star checked" />
-                <span class="fa fa-star checked" />
-                <span class="fa fa-star checked" />
-                <span class="fa fa-star" />
-                <span class="fa fa-star" />
-              </p>
-            </div>
-          </div>
-          </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
-        <Link to="/detail/MissonImpossibleFallout"style={{color:'black',textDecoration:'none'}}> 
-          <div className="card card-inverse card-primary text-center">
-            <img
-              className="moviePosterImg image "
-              src="https://www.thebeaverton.com/wp-content/uploads/2018/07/mission-impossible-fallout.jpg"
-              alt="Card image cap"
-            />
-            <div className="card-block">
-              <h4 className="card-title text-center">Misson Impossible: Fallout</h4>
-              <p className="text-center"> Year: 2017 </p>
-              <p className="text-center">
-                {" "}
-                rating: <span class="fa fa-star checked" />
-                <span class="fa fa-star checked" />
-                <span class="fa fa-star checked" />
-                <span class="fa fa-star checked" />
-                <span class="fa fa-star" />
-              </p>
-            </div>
-          </div>
-          </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
-        <Link to="/detail/ReadyPlayerOne" style={{color:'black',textDecoration:'none'}}> 
-          <div className="card card-inverse card-success text-center ">
-            <img
-              className="moviePosterImg  image "
-              src="https://www.metrolibrary.org/sites/default/files/ready-player-one-new-poster-1-1021x580.jpg"
-              alt="Card image cap"
-            />
-
-            <div className="card-block">
-              <h4 className="card-title text-center ">Ready Player One</h4>
-              <p className="text-center"> Year: 2016 </p>
-              <p className="text-center">
-                {" "}
-                rating: <span class="fa fa-star checked" />
-                <span class="fa fa-star checked" />
-                <span class="fa fa-star checked" />
-                <span class="fa fa-star " />
-                <span class="fa fa-star" />
-              </p>
-            </div>
-          </div>
-          </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
-        <Link to="/detail/infinityWar"style={{color:'black',textDecoration:'none'}}> 
-          <div className="card card-inverse card-info text-center">
-            <img
-              className="moviePosterImg image"
-              src="https://i1.wp.com/stlhattrick.com/wp-content/uploads/2018/05/landscape-1522924460-avengers-infinity-war-poster.jpg"
-              alt="Card image cap"
-            />
-            <div className="card-block">
-              <h4 className="card-title text-center">Marvel's Infinity War</h4>
-              <p className="text-center"> Year: 2016 </p>
-              <p className="text-center">
-                {" "}
-                rating: <span class="fa fa-star checked" />
-                <span class="fa fa-star checked" />
-                <span class="fa fa-star checked" />
-                <span class="fa fa-star  checked" />
-                <span class="fa fa-star" />
-              </p>
-            </div>
-          </div>
-          </Link>
-        </div>
-       
-
-      </div>
-
-    </div>
-
     );
-};
-export default MoviesPage;
+  }
+}
+
+function mapStateToProp(state) {
+  return {
+    MOVIES: state.reducer.MOVIES
+  };
+}
+function mapDispatchToProp(dispatch) {
+  // return {
+  //   MOVIESData: () => {
+  //     dispatch(MOVIESData());
+  //   }
+  // };
+}
+
+export default connect(
+  mapStateToProp,
+  mapDispatchToProp
+)(MoviesPage);
