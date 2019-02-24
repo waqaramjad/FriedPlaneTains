@@ -29,6 +29,8 @@ console.log(data)
 
 }
 
+
+
 export function GetCommentsofMovie(data){
   let arrayofComments=[];
   return dispatch => {
@@ -60,6 +62,18 @@ export function CommentOnMovie(data) {
           console.log(value);
           
           GetCommentsofMovie(data.NameOftheMovie);
+          })
+  }
+}
+export function ContactData(data) {
+  return dispatch => {
+      console.log('ContactData ')
+
+      firebase.database().ref('Contact/').push(data)
+      .then((value) => {
+          console.log(value);
+          
+          // GetCommentsofMovie(data.NameOftheMovie);
           })
   }
 }

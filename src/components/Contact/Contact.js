@@ -8,7 +8,7 @@ import Social from "../../media/promo_social.png";
 import {
   changeName,
   GoogleSignin,
-  facebookSignin
+  facebookSignin , ContactData
 } from "../../store/actions/action";
 // const Contact = () => {
 
@@ -20,9 +20,25 @@ import {
         email : '',
         message : ''
       };
+      this.contactData = this.contactData.bind(this)
     }
  
    
+contactData(){
+
+// alert('sdugfi')
+var name = this.state.name
+var email = this.state.email
+var message = this.state.message
+
+var ConractData = {
+  name ,
+  email, 
+  message
+}
+this.props.ContactDataSend(ConractData)
+}
+
     render() {
     var that = this
     console.log(this.state)
@@ -56,7 +72,7 @@ import {
                       </span>
                       <input type="email" className="form-control" id="email" placeholder="Enter email" required="required"  onChange= {(value)=>{var val = value.target.value ; that.setState({email: val})  }} /></div>
                   </div>
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label htmlFor="subject">
                       Subject</label>
                     <select id="subject" name="subject" className="form-control" required="required">
@@ -65,7 +81,7 @@ import {
                       <option value="suggestions">Suggestions</option>
                       <option value="product">Product Support</option>
                     </select>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="col-md-6">
                   <div className="form-group">
@@ -76,7 +92,7 @@ import {
                   </div>
                 </div>
                 <div className="col-md-12">
-                  <button type="submit" className="btn btn-primary pull-right" id="btnContactUs">
+                  <button type="button" className="btn btn-primary pull-right" id="btnContactUs" onClick={that.contactData}>
                     Send Message</button>
                 </div>
               </div>
@@ -117,12 +133,12 @@ function mapStateToProp(state) {
   // };
 }
 function mapDispatchToProp(dispatch) {
-  // return {
-  //   ProfileSaveFilmList: (profile) => {
-  //     dispatch(ProfileSaveFilmList(profile));
-  //   },
+  return {
+    ContactDataSend: (data) => {
+      dispatch(ContactData(data));
+    },
 
-  // };
+  };
 }
 
 export default connect(
