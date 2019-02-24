@@ -37,6 +37,10 @@ const reducer = (state = initial, action) => {
       return { ...state,currentUser: action.payload };
       case "PROFILESAVELIST":
       return { ...state,PROFILESAVELIST: action.payload };
+      case "ActorRating":
+      return { ...state,ActorRating: action.payload };
+      case "MovieRating":
+      return { ...state,MovieRating: action.payload };
       case  'Latest_Comment':
       let newComments=''
       newComments=action.payload;

@@ -9,7 +9,7 @@ import {
   changeName,
   GoogleSignin,
   facebookSignin , 
-  getSaveList
+  getSaveList , getActorRating , getMovieRating
 
 } from "../../store/actions/action";
 // const UserHome = this.props => {
@@ -34,6 +34,8 @@ import {
 // var CinemaTag=this.this.props.match.params.CinemaName;
 //         this.this.props.CinemaData(CinemaTag)
 this.props.getSaveList()
+this.props.getActorRating()
+this.props.getMovieRating()
 
     }
   render() {
@@ -218,6 +220,113 @@ console.log(this.props)
         </div>
       </div>
 
+
+      <div className="row" style={{ marginTop: "15px" }}>
+      <div className="col-md-4 offset-md-2 text-left">
+          <h4
+            style={{
+              backgroundColor: "#101613",
+              color: "#ffff00",
+              textAlign: "center",
+              padding: "20px",
+              margin: "0px auto"
+            }}
+          >
+            Actor Rating
+          </h4>
+          <table class="table  table-bordered  table-hover table-dark">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" className="text-center">
+                  No
+                </th>
+                <th scope="col" className="text-center">
+                 Actor Name
+                </th>
+                <th scope="col" className="text-center">
+                Rating
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+
+                this.props.ActorRating!=undefined ? Object.keys( this.props.ActorRating).map((data, index) => {
+var myData = this.props.ActorRating[data]
+
+                  console.log(data)
+                  return(
+                    <tr>
+                    <td scope="row" className="text-center">
+                      {index}
+                    </td>
+                    <td className="text-center">{data}</td>
+                    <td className="text-center">{myData.ActorRating}</td>
+                  </tr>
+                  )
+
+
+                }) : null
+              }
+            </tbody>
+            </table>
+
+
+      
+      </div>
+      <div className="col-md-4  text-left">
+          <h4
+            style={{
+              backgroundColor: "#101613",
+              color: "#ffff00",
+              textAlign: "center",
+              padding: "20px",
+              margin: "0px auto"
+            }}
+          >
+            Movie Rating
+          </h4>
+          <table class="table  table-bordered  table-hover table-dark">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" className="text-center">
+                  No
+                </th>
+                <th scope="col" className="text-center">
+                 Movie Name
+                </th>
+                <th scope="col" className="text-center">
+                Rating
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+
+                this.props.MovieRating!=undefined ? Object.keys( this.props.MovieRating).map((data, index) => {
+var myData = this.props.MovieRating[data]
+
+                  console.log(data)
+                  return(
+                    <tr>
+                    <td scope="row" className="text-center">
+                      {index}
+                    </td>
+                    <td className="text-center">{data}</td>
+                    <td className="text-center">{myData.MovieName}</td>
+                  </tr>
+                  )
+
+
+                }) : null
+              }
+            </tbody>
+            </table>
+
+
+      
+      </div>
+      </div>
       <div className="row" style={{ marginTop: "15px" }}>
       <div className="col-md-4 offset-md-2 text-left">
           <h4
@@ -274,10 +383,13 @@ var myData = this.props.PlayList[data]
           }
 };
 function mapStateToProp(state) {
+  console.log(state)
   return {
     //   userName: state.reducer.name,
     CurrentUser: state.reducer.currentUser , 
-    PlayList : state.reducer.PROFILESAVELIST
+    PlayList : state.reducer.PROFILESAVELIST,
+    ActorRating : state.reducer.ActorRating,
+    MovieRating : state.reducer.MovieRating,
   };
 }
 function mapDispatchToProp(dispatch) {
@@ -291,6 +403,13 @@ function mapDispatchToProp(dispatch) {
     getSaveList: () => {
       dispatch(getSaveList());
     } , 
+    getActorRating: () => {
+      dispatch(getActorRating());
+    } , 
+    getMovieRating: () => {
+      dispatch(getMovieRating());
+    } , 
+
 
   };
 }

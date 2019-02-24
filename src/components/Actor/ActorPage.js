@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import './movieStyle.css'
+import Rating from 'react-rating'
+
 import {
   AcrtorsData
-
+,ActorsRating
 } from "../../store/actions/action";
 class ActorPage extends Component {
 
@@ -20,10 +22,22 @@ console.log(this.props.Actors)
 var actors = this.props.Actors
 // this.setState({
 //   Actors : actors
+this.ratingSystem = this.ratingSystem.bind(this)
 // })
   }
+
+
    componentDidMount() {
     // this.props.GetAllNewsFromFirebase();
+  }
+
+  ratingSystem(rating , object ){
+console.log(rating)
+console.log(object)
+// var currentUser = firebase.auth().currentUser
+    // console.log(currentUser)
+   this.props.ActorsRating(rating ,object )
+
   }
   render() {
     console.log(this.props.Actors)
@@ -62,11 +76,22 @@ var actors = this.props.Actors
                           {/* <p className="text-center"> Year: 2016 </p> */}
                           <p className="text-center">
                             {" "}
-                            rating: <span class="fa fa-star checked" />
+                            {/* rating: <span class="fa fa-star checked" />
                             <span class="fa fa-star checked" />
                             <span class="fa fa-star checked" />
                             <span class="fa fa-star  " />
-                            <span class="fa fa-star" />
+                            <span class="fa fa-star" /> */}
+
+<Rating
+              emptySymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
+              // emptySymbol={<img src="./starempty.png" className="icon" />}
+              placeholderSymbol={<img src="https://i.ibb.co/DKk6pMm/star-empty.png" className="icon" />}
+              fullSymbol={<img src="https://i.ibb.co/b25dkB4/star-yellow.png" className="icon" />}
+              // onHover={(value  )=>{console.log(myActors)}}
+              onClick={(value)=>{that.ratingSystem(value ,myActors )}}
+
+              // onChange={(value)=>{console.log(value)}}
+             />
                           </p>
                         </div>
                       </div>
@@ -102,7 +127,10 @@ function mapDispatchToProp(dispatch) {
     
     AcrtorsData: () => {
       dispatch(AcrtorsData());
-    }
+    },
+    ActorsRating: (rating ,object ) => {
+      dispatch(ActorsRating(rating ,object ));
+    },
   };
 }
 

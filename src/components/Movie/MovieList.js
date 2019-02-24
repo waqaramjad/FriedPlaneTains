@@ -4,7 +4,10 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   MOVIESData
-} from "../../store/actions/action";class MoviesList extends Component {
+} from "../../store/actions/action";
+
+
+class MoviesList extends Component {
   constructor(props) {
     super(props);
     this.state = {

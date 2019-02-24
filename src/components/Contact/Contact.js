@@ -10,7 +10,22 @@ import {
   GoogleSignin,
   facebookSignin
 } from "../../store/actions/action";
-const Contact = () => {
+// const Contact = () => {
+
+  class Contact extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        name : '' ,
+        email : '',
+        message : ''
+      };
+    }
+ 
+   
+    render() {
+    var that = this
+    console.log(this.state)
   return (
     <div>
       
@@ -31,7 +46,7 @@ const Contact = () => {
                   <div className="form-group">
                     <label htmlFor="name">
                       Name</label>
-                    <input type="text" className="form-control" id="name" placeholder="Enter name" required="required" />
+                    <input type="text" className="form-control" id="name" placeholder="Enter name" required="required"  onChange= {(value)=>{var val = value.target.value ; that.setState({name: val})  }} />
                   </div>
                   <div className="form-group">
                     <label htmlFor="email">
@@ -39,7 +54,7 @@ const Contact = () => {
                     <div className="input-group">
                       <span className="input-group-addon"><span className="glyphicon glyphicon-envelope" />
                       </span>
-                      <input type="email" className="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                      <input type="email" className="form-control" id="email" placeholder="Enter email" required="required"  onChange= {(value)=>{var val = value.target.value ; that.setState({email: val})  }} /></div>
                   </div>
                   <div className="form-group">
                     <label htmlFor="subject">
@@ -56,7 +71,8 @@ const Contact = () => {
                   <div className="form-group">
                     <label htmlFor="name">
                       Message</label>
-                    <textarea name="message" id="message" className="form-control" rows={9} cols={25} required="required" placeholder="Message" defaultValue={""} />
+                    <textarea name="message" id="message" className="form-control" rows={9} cols={25} required="required" placeholder="Message" defaultValue={""}  onChange= {(value)=>{var val = value.target.value ; that.setState({message: val})  }}
+                     />
                   </div>
                 </div>
                 <div className="col-md-12">
@@ -87,7 +103,32 @@ const Contact = () => {
       </div>
     </div>
   </div>
-  );
+  )
+    };
 };
 
-export default Contact;
+function mapStateToProp(state) {
+  // return {
+  //   userName: state.reducer.name,
+  //   CurrentUser: state.reducer.currentUser, 
+  //   MOVIES : state.reducer.MOVIES , 
+  //   Comments:state.reducer.latestComment
+
+  // };
+}
+function mapDispatchToProp(dispatch) {
+  // return {
+  //   ProfileSaveFilmList: (profile) => {
+  //     dispatch(ProfileSaveFilmList(profile));
+  //   },
+
+  // };
+}
+
+export default connect(
+  mapStateToProp,
+  mapDispatchToProp
+)(Contact);
+
+
+// export default Contact;
