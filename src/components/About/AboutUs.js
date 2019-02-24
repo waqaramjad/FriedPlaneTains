@@ -82,14 +82,14 @@ const AboutUS = () => {
         </div>
       </div>
       <div className="row" style={{ marginTop: "15px" }}>
-        <div className="col-md-4 offset-md-2">
+        {/* <div className="col-md-4 offset-md-2">
           <p>
             If you are a movie-lover from any of these countries and would like
             to be notified when we have reached your country, please leave your
             contact info here:
           </p>
-        </div>
-        <div className="col-md-4">
+        </div> */}
+        {/* <div className="col-md-4">
           <div className="form-group">
             <input
               type="text"
@@ -119,7 +119,7 @@ const AboutUS = () => {
           <button type="submit" class="btn btn-warning">
             Submit
           </button>
-        </div>
+        </div> */}
       </div>
       <br />
     </div>

@@ -60,18 +60,22 @@ function renderColors(option) {
 class Home extends Component {
 
   constructor(props) {
-
+    
     super(props);
-    this.props.MOVIESData()
+    // this.props.MOVIESData()
     
     // this.props.AcrtorsData()
+    // this.props.MOVIESData()
   }
-   componentDidMount() {
+
+  componentDidMount() {
     this.props.GetAllNewsFromFirebase();
+    // this.props.MOVIESData()
   }
 
   
   render() {
+console.log('movie home' , this.props)
     return (
       <div className="container-fluid">
         <Carousal />
